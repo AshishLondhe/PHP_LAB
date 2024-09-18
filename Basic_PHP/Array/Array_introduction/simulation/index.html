@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+        var l = 1;
+        var l1 = 1;
+        var h = 3;
+        var k = 9;
+        function initphp()
+        {
+            l = 1;
+            l1 = 1;
+            h = 3;
+            k = 9;
+            var i;
+            for(i=1;i<=16;i++)
+            {
+                document.getElementById("l" + i).style.background = "";
+                if(i<=7)
+                {
+                    document.getElementById("h" + i).style.display = "none";
+                }
+                if(i<=15)
+                    document.getElementById("ht" + i).style.display = "none";
+            }
+            l = 1;
+            time1 = setInterval("Timer1()", 1000);
+        }
+        function Timer1()
+            {
+                for(i=1;i<=16;i++)
+                {
+                    document.getElementById("l" + i).style.background = "";
+
+                }
+                document.getElementById("l" + l).style.background = "yellow";
+                if (l <= 9)
+                    document.getElementById("ht" + l).style.display = "inline";
+                if (l == 7)
+                {
+                    document.getElementById("h1").style.display = "inline";
+
+                }
+                else if (l == 8)
+                {
+                    document.getElementById("h2").style.display = "inline";
+                }
+                l++;
+                if(l>8)
+                {
+                    clearInterval(time1);
+                    k = 9;
+                    time2 = setInterval("Timer2()", 1000);
+                }
+        }
+        function Timer2()
+        {
+            for (i = 1; i <= 16; i++) {
+                document.getElementById("l" + i).style.background = "";
+
+            }
+            document.getElementById("l" + l).style.background = "yellow";
+            if (l == 13)
+            {
+                document.getElementById("h" + h).style.display = "inline";
+                document.getElementById("ht"+k).style.display="inline";
+                h++;
+                k++;
+            }
+            l++;
+            if(l>13)
+            {
+                l = 12;
+                l1++;
+            }
+            if(l1>5)
+            {
+                clearInterval(time2);
+                for (i = 1; i <= 16; i++) {
+                    document.getElementById("l" + i).style.background = "";
+
+                }
+                document.getElementById("l" + 12).style.background = "yellow";
+                l = 13;
+                time3 = setInterval("Timer3()", 1000);
+
+            }
+        }
+        function Timer3()
+        {
+            for (i = 1; i <= 16; i++) {
+                document.getElementById("l" + i).style.background = "";
+
+            }
+            document.getElementById("l" + l).style.background = "yellow";
+            if (l == 15)
+                document.getElementById("ht14").style.display = "inline";
+            if (l == 16)
+                document.getElementById("ht15").style.display = "inline";
+            l++;
+
+            if(l>16)
+            {
+                clearInterval(time3);
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td style="vertical-align:top ">
+                <p id="l1"> &lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l5"> &lt;/head&gt;</p>
+                <p id="l6"> &lt;body&gt;</p>
+                <p id="l7"> &lt;h1&gt; This is a simple array demo&lt;/h1&gt;</p>
+                <p id="l8"> &lt;h2&gt; Index value is of Integer&lt;/h2&gt;</p>
+                <p id="l9"> &lt;?PHP</p>
+                <p id="l10"> $Year = array("FE","SE","TE","BE","ME");</p>
+                <p id="l11"> $cnt = count($Year);</p>
+                <p id="l12">for($num=0;$num&lt; $cnt; $num++) echo "</p>
+                <p id="l13"> &lt;h3&gt;Year[$num] = $Year[$num] &lt;/h3&gt;&lt;br&gt;";</p>
+                <p id="l14">?&gt;</p>
+                <p id="l15">&lt;/body&gt;</p>
+                <p id="l16">&lt;/html&gt;</p>
+                <input type="button"  style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="initphp();" />
+
+            </td>
+            <td style="vertical-align:top ">
+                <h1 id="h1" style="display:none ">This is a simple array demo</h1><br />
+                <h2 id="h2" style="display:none ">Index value is of integer Type</h2><br />
+                <label id="h3" style="display:none ">Year[0]=FE</label><br />
+                <label id="h4" style="display:none ">Year[1]=SE</label><br />
+                <label id="h5" style="display:none ">Year[2]=TE</label><br />
+                <label id="h6" style="display:none ">Year[3]=BE</label><br />
+                <label id="h7" style="display:none ">Year[4]=ME</label>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p id="ht1" style="display:none">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p><br />
+                <p id="ht5" style="display:none">&lt;/head&gt;</p><br />
+                <p id="ht6" style="display:none">&lt;body&gt;</p><br />
+                <p id="ht7" style="display:none">&lt;h1&gt; This is a simple array demo&lt;/h1&gt;</p><br />
+                <p id="ht8" style="display:none">&lt;h2&gt; Index value is of Integer&lt;/h2&gt;</p><br />
+                <p id="ht9" style="display:none">&lt;h3&gt;Year[0] = FE &lt;/h3&gt;&lt;br&gt;</p><br />
+                <p id="ht10" style="display:none">&lt;h3&gt;Year[1] = SE &lt;/h3&gt;&lt;br&gt;</p><br />
+                <p id="ht11" style="display:none">&lt;h3&gt;Year[2] = TE &lt;/h3&gt;&lt;br&gt;</p><br />
+                <p id="ht12" style="display:none">&lt;h3&gt;Year[3] = BE &lt;/h3&gt;&lt;br&gt;</p><br />
+                <p id="ht13" style="display:none">&lt;h3&gt;Year[4] = ME &lt;/h3&gt;&lt;br&gt;</p><br />
+                <p id="ht14" style="display:none">&lt;/body&gt;</p><br />
+                <p id="ht15" style="display:none">&lt;/html&gt;</p><br />
+</td>
+        </tr>
+    </table>
+<br>
+<p>Task 1 )Write a PHP script to accept an array of five numbers, compute and display their square values.<br/>
+Task 2) Write a PHP script to accept an array of five numbers and sort them in ascending order.<br/>
+Task 3) Modify the program in Task 1 to sort the array in descending order.<br />
+ </p> <br/>
+ <p><i> [Write your code in the area provided below.] </i></p>
+<!-- <p> <b> &lt;?php <b/></p>
+<iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+</body>
+</html>

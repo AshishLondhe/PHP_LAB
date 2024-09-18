@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/switch1.ob.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 16.0pt;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <table style="width:100%">
+    <tr>
+        <td>
+            <p id="l1">&lt;!DOCTYPE html&gt;</p>
+            <p id="l2">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+            <p id="l3">&lt;head&gt;
+            <p id="l4">&lt;title&gt;Introduction to PHP&lt;/title&gt;
+            <p id="l5">&lt;/head&gt;
+            <p id="l6">&lt;body&gt;
+            <p id="l7"> &lt;h1&gt; This is a switch....case Demo &lt;/h1&gt;
+            <p id="l8">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;
+            <p id="l9">&lt;table&gt;</p>
+            <p id="l10"> &lt;tr&gt;&lt;td&gt; Enter First Number&lt;/td&gt;&lt;td&gt; &lt;input type=text name=value1  value= "&lt;?php echo isset($_POST['value1']) ? $_POST['value1'] : ''; ?&gt;" &gt;&lt;/td&gt;&lt;/tr&gt;</p>
+            <p id="l11">&lt;tr&gt;&lt;td&gt;Enter Second Number&lt;/td&gt;&lt;td&gt; &lt;input type=text name=value2 value="&lt;?php echo isset($_POST['value2']) ? $_POST['value2'] : ''; ?&gt;" &gt;</p>
+            <p id="l12">&lt;/td&gt;&lt;/tr&gt;</p>
+            <p id="l13">&lt;tr&gt;&lt;td&gt;Select the Operation you want to perform&lt;/td&gt;</p>
+            <p id="l14">&lt;td&gt;&lt;select name = operator&gt;</p>
+            <p id="l15">&lt;option value= + &lt;?php echo (isset($_POST["operator"]) && $_POST["operator"] == "+") ? ' selected="selected"': "" ;?&gt;'&gt;+ &lt;/option&gt;</p>
+            <p id="l16">&lt;option value= - &lt;?php echo (isset($_POST["operator"]) && $_POST["operator"] == "-") ? ' selected="selected"': "" ;?&gt;'&gt;- &lt;/option&gt;</p>
+            <p id="l17">&lt;option value= * &lt;?php echo (isset($_POST["operator"]) && $_POST["operator"] == "*") ? ' selected="selected"': "" ;?&gt;'&gt;* &lt;/option&gt;</p>
+            <p id="l18">&lt;option value= / &lt;?php echo (isset($_POST["operator"]) && $_POST["operator"] == "/") ? ' selected="selected"': "" ;?&gt;'&gt;/ &lt;/option&gt;</p>
+            <p id="l19">&lt;/select&gt;</p>
+            <p id="l20">&lt;/td&gt;&lt;/tr&gt;</p>
+            <p id="l21">&lt;tr&gt;&lt;td&gt;&lt;input type = submit  value = Calculate&gt;&lt;/tr&gt;&lt;/td&gt;</p>
+            <p id="l22">&lt;/table&gt;</p>
+            <p id="l23">&lt;/form&gt;</p>
+            <p id="l24">&lt;?php</p>
+            <p id="l25"> if( count($_POST) &gt; 0 && isset($_POST["value1"]) && isset($_POST["value2"]))</p>
+            <p id="l26">{</p>
+            <p id="l27">$varOperand1= $_POST["value1"];</p>
+            <p id="l28">$varOperand2=$_POST["value2"];</p>
+            <p id="l29">$varOp = $_POST["operator"];</p>
+            <p id="l30">switch($varOp)</p>
+            <p id="l31">{</p>
+            <p id="l32">case "+" : $varRes = $varOperand1 + $varOperand2;</p>
+            <p id="l33">echo"&lt;br&gt; &lt;b&gt;The addition is $varRes";</p>
+            <p id="l34">break;</p>
+            <p id="l35">case "-" :$varRes = $varOperand1 - $varOperand2;</p>
+            <p id="l36">echo"&lt;br&gt;&lt;b&gt; The subtraction is $varRes";</p>
+            <p id="l37">break;</p>
+            <p id="l38">case "*": $varRes = $varOperand1 * $varOperand2;</p>
+            <p id="l39">echo"&lt;br&gt;&lt;b&gt; The multiplication is $varRes";</p>
+            <p id="l40">break;</p>
+            <p id="l41">case "/" : if($varOperand2 !=0)</p>
+            <p id="l42">{</p>
+            <p id="l43">$varRes = $varOperand1 / $varOperand2;</p>
+            <p id="l44">echo"&lt;br&gt;&lt;b&gt; The division is $varRes";</p>
+            <p id="l45">}</p>
+            <p id="l46">else</p>
+            <p id="l47">{echo"&lt;br&gt; &lt;b&gt;Division not possible. Division by zero Error";</p>
+            <p id="l48">break;</p>
+            <p id="l49">}</p>
+            <p id="l50">}</p>
+            <p id="l51">?&gt;</p>
+            <p id="l52">&lt;/body&gt;</p>
+            <p id="l53">&lt;/html&gt;</p>
+            <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" onclick="initphp();" value="Execute PHP" />
+          </td>
+
+        <td style="vertical-align:top">
+            <h1 id="h1" style="display:none "> This is a switch....case Demo </h1>
+            <table id="tb1">
+                <tr>
+                    <td id="h2" style="display:none ">Enter First Number <input type="text" id="t1" /></td>
+
+                </tr>
+                <tr>
+                    <td id="h3" style="display:none ">Enter Second Number <input type="text" id="t2" /></td>
+
+                </tr>
+
+                <tr>
+                    <td id="h4" style="display:none ">
+                        Select the Operation you want to perform :
+                        <select name="method" id="list1">
+                            <option value="+" >+</option>
+                            <option value="-">-</option>
+                            <option value="*">*</option>
+                            <option value="/">/</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td id="h5" style="display:none ">
+                        <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Calculate" onclick="cal();" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+        <tr>
+            <td style="vertical-align:top ">
+                <p id="ht1" style="display:none">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p><br />
+                <p id="ht5" style="display:none">&lt;/head&gt;</p><br />
+                <p id="ht6" style="display:none">&lt;body&gt;</p><br />
+                <p id="ht7" style="display:none">&lt;h1&gt; This is a switch....case Demo &lt;/h1&gt;</p><br />
+                <p id="ht8" style="display:none">&lt;form name=formSubmit method="post" action="/vlab/switch_demo.php"&gt;</p><br />
+                <p id="ht9" style="display:none"> &lt;table&gt;</p><br />
+                <p id="ht10" style="display:none">&lt;tr&gt;&lt;td&gt; Enter First Number&lt;/td&gt;&lt;td&gt; &lt;input type=text name=value1 value="<span id="val1"></span>" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht11" style="display:none">&lt;tr&gt;&lt;td&gt;Enter Second Number&lt;/td&gt; &lt;td&gt;&lt;input type=text name=value2 value="<span id="val2"></span>"&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht12" style="display:none">&lt;tr&gt;&lt;td&gt;Select the Operation you want to perform&lt;/td&gt;</p><br />
+                <p id="ht13" style="display:none">&lt;td&gt;&lt;select name=operator&gt;</p>	<br />
+                <p id="ht14" style="display:none">&lt;option value=+ <span id="plus"></span> &gt; + &lt;/option&gt;</p><br />
+                <p id="ht15" style="display:none">&lt;option value=- <span id="minus"></span> &gt; - &lt;/option&gt;</p><br />
+                <p id="ht16" style="display:none">&lt;option value=* <span id="mult"></span> &gt; * &lt;/option&gt;</p><br />
+                <p id="ht17" style="display:none">&lt;option value=/ <span id="div"></span>&gt; / &lt;/option&gt;</p><br />
+                <p id="ht18" style="display:none">&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht19" style="display:none">&lt;tr&gt;&lt;td&gt;&lt;input type=submit value=Calculate /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht20" style="display:none">&lt;/table&gt;</p><br />
+                <p id="ht21" style="display:none">&lt;/form&gt;</p><br />
+                <p id="ht22" style="display:none">&lt;br&gt; &lt;b&gt;<span id="ans"></span>&lt;/b&gt;</p><br />
+                <p id="ht23" style="display:none">&lt;/body&gt;</p><br />
+                <p id="ht24" style="display:none">&lt;/html&gt;</p><br />
+
+</td>
+        </tr>
+    </table><br>
+<p>Task 1) Write a PHP script using switch case statement, to accept month number as input (1 to 12) and display the respective month accordingly (January to December).
+<p >Task 2) Write a PHP script  using switch case statement, to accept a character (a - z) as input and accordingly display the message "The given character is a vowel." or "The given character is a consonant."</p>
+
+ </p> <br />
+ <p><i> [Write your code in the area provided below.] </i></p><br>
+<!-- <p> <b> &lt;?php </b></p>
+<iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+<br> 
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/function1_rec.ob.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+
+    </style>
+    <script>
+
+    </script>
+
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l5">&lt;/head&gt;</p>
+                <p id="l6">&lt;body&gt;</p>
+                <p id="l7">&lt;h1&gt;This program helps in understanding the functions&lt;/h1&gt;</p>
+                <p id="l8">&lt;h2&gt;Calculates Factorial of a Number&lt;/h2&gt;</p>
+                <p id="l9">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="l10">&lt;table&gt;</p>
+                <p id="l11">&lt;tr&gt;&lt;td&gt;Enter The nunmber  &lt;/td&gt;</p>
+                <p id="l12">&lt;td&gt;&lt;input type=text name=value1  value= "&lt;?php echo isset($_POST['value1']) ? $_POST['value1'] : ''; ?&gt;" /&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l13">&lt;tr&gt;&lt;td&gt;&lt;input type="submit" value="Calculate" /&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l14">&lt;/table&gt;</p>
+                <p id="l15">&lt;/form&gt;</p>
+                <p id="l16"> &lt;?php</p>
+                <p id="l17">if( count($_POST) &gt; 0 && isset($_POST["value1"]) )</p>
+                <p id="l18">{</p>
+                <p id="l19">$varAns=1;</p>
+                <p id="l20">function Factorial($num)</p>
+                <p id="l21">{</p>
+                <p id="l22">$Fact =1;</p>
+                <p id="l23">if($num &lt;=1)</p>
+                <p id="l24">return Fact ;</p>
+                <p id="l25">else</p>
+                <p id="l26">$Fact = $num * Factorial($num -1);</p>
+                <p id="l27">return $Fact;</p>
+                <p id="l28">}</p>
+                <p id="l29"> $varAns=Factorial($varOperand);</p>
+                <p id="l30">echo " &lt;b&gt;Factorial of $varOperand  is $varAns&lt;/b&gt; ";</p>
+                <p id="l31">}</p>
+                <p id="l32">?&gt;</p>
+                <p id="l33">&lt;/body&gt;</p>
+                <p id="l34">&lt;/html&gt;</p>
+
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="initphp();" />
+
+</td>
+            <td style="vertical-align:top">
+                <h2 id="h1" style="display:none ">This program helps in understanding the functions</h2><br />
+                <h2 id="h2" style="display:none ">Calculates Factorial of a Number</h2><br />
+                <h4 id="h3" style="display:none ">Enter The Number</h4><input type="text" id="h4" style="display:none " /><br />
+                <input type="button"  id="h5" value="calculate" onclick="cal();" style="display:none " /><br />
+                <b id="h6" style="display:none "></b>
+            </td></tr>
+           <tr> <td>
+                    <p id="ht1" style="display:none">&lt;!DOCTYPE html&gt;</p><br />
+                    <p id="ht2" style="display:none">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                    <p id="ht3" style="display:none">&lt;head&gt;</p><br />
+                    <p id="ht4" style="display:none">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p><br />
+                    <p id="ht5" style="display:none">&lt;/head&gt;</p><br />
+                    <p id="ht6" style="display:none">&lt;body&gt;</p><br />
+                    <p id="ht7" style="display:none">&lt;h1&gt;This  program helps in understanding the functions&lt;/h1&gt;</p><br />
+                    <p id="ht8" style="display:none">&lt;h2&gt;Calculates Factorial of a Number&lt;/h2&gt;</p><br />
+                    <p id="ht9" style="display:none">&lt;form name=formSubmit method="post" action="/vlab/function_rec.php"&gt;</p><br />
+                    <p id="ht10" style="display:none">&lt;table&gt;</p><br />
+                    <p id="ht11" style="display:none">&lt;tr&gt;&lt;td&gt;Enter The nunmber  &lt;/td&gt;</p><br />
+                    <p id="ht12" style="display:none">&lt;td&gt;&lt;input type=text name=value1  value= "<span id="num"></span>" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                    <p id="ht13" style="display:none">&lt;tr&gt;&lt;td&gt;&lt;input type="submit" value="Calculate" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                    <p id="ht14" style="display:none">&lt;/table&gt;</p><br />
+                    <p id="ht15" style="display:none">&lt;/form&gt;</p><br />
+                    <p id="ht16" style="display:none">&lt;b&gt;Factorial of <span id="num1"></span> is <span id="ans"></span>&lt;/b&gt;</p><br />
+                    <p id="ht17" style="display:none">&lt;/body&gt;</p><br />
+                    <p id="ht18" style="display:none">&lt;/html&gt;
+               </td>
+        </tr>
+    </table><br>
+<p >Task 1) Write a PHP script using the recursive function to display the first 'n'Fibonacci numbers in the Fibonacci. <br/>
+<p > Task 2) Write a PHP script using recursive function, to convert a given decimal number to its binary equivalent and display the same.<br/>
+ </p> <br/>
+<p><i> [Write your code in the area provided below.] </i ></p><br>
+<!-- <p> <b> &lt;?php <b/></p> -->
+<!-- <iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+
+
+</body>
+</html>

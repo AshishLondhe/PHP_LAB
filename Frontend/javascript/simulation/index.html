@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+
+    </style>
+
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <script>
+        var i = 1;
+        var time1;
+
+        function cal()
+        {
+            for (i = 1; i <= 13; i++)
+            {
+                document.getElementById("l" + i).style.backgroundColor = "";
+            }
+            document.getElementById("h1").style.display = "none";
+            document.getElementById("h2").style.display = "none";
+
+            for (i = 1; i <= 11; i++)
+            {
+                document.getElementById("ht"+i).style.display = "none";
+            }
+            i = 1;
+            k = 1;
+            time1=setInterval("Timer()", 1000);
+
+        }
+        function Timer()
+        {
+            var j;
+
+
+            if (i <= 13)
+            {
+                for (j = 1; j <= 13; j++) {
+                    document.getElementById("l" + j).style.backgroundColor = "";
+                }
+                document.getElementById("l" + i).style.backgroundColor = "yellow";
+                if(i<=8)
+                    document.getElementById("ht" + i).style.display = "inline";
+
+                if (i == 8)
+                {
+                    document.getElementById("h1").style.display = "inline";
+                }
+                if (i == 10) {
+                    document.getElementById("h2").style.display = "inline";
+                    document.getElementById("ht"+(i-1)).style.display = "inline";
+
+                }
+                if (i >= 12 && i <= 13) {
+
+                    document.getElementById("ht" + (i-2)).style.display = "inline";
+                }
+
+                i++;
+
+            }
+            else
+            {
+                clearInterval(time1);
+            }
+        }
+    </script>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td style="vertical-align:top ">
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="l5">&lt;title&gt;Introduction to PHP &lt;/title&gt;</p>
+                <p id="l6">&lt;/head&gt;</p>
+                <p id="l7">&lt;body&gt;</p>
+                <p id="l8">&lt;h1&gt; First PHP Program &lt;/h1&gt;</p>
+                <p id="l9"> &lt;?php</p>
+                <p id="l10">echo "&lt;p&gt; Hello &lt;/p&gt;";</p>
+                <p id="l11">?&gt;</p>
+                <p id="l12">&lt;/body &gt;</p>
+                <p id="l13">&lt;/html &gt;</p>
+                <p>
+                    <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="cal();"/>
+                </p>
+            </td>
+
+            <td style="vertical-align:top ">
+                <h1 style="display:none" id="h1"> First PHP Program </h1>
+                <br />
+                <p style="display:none" id="h2">Hello</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align:top " colspan="2">
+                <p style="display:none" id="ht1">&lt;!DOCTYPE html&gt;</p><br />
+                <p style="display:none" id="ht2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p style="display:none" id="ht3">&lt;head&gt;</p><br />
+                <p style="display:none" id="ht4">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p style="display:none" id="ht5">&lt;title&gtIntroduction to PHP&lt;/title&gt;</p><br />
+                <p style="display:none" id="ht6">&lt;/head&gt;</p><br />
+                <p style="display:none" id="ht7">&lt;body&gt;</p><br />
+                <p style="display:none" id="ht8">&lt;h1&gt;This is a First PHP Program &lt;/h1&gt;</p><br />
+                <p style="display:none" id="ht9">&lt;p&gt;Hello&lt;/p&gt;<br />
+                <p style="display:none" id="ht10">&lt;/body&gt;</p><br />
+                <p style="display:none" id="ht11">&lt;/html&gt;</p><br />
+        </td>
+      </tr>
+    </table> <br>
+<p>Task 1) Write a PHP script to display the message,<b> "Hello! Welcome to Virtual Lab on PHP".</b><br>
+Task 2) Write a PHP script to display the following table using html table tag</p><br>
+      <table border =1>   <tr><th>State</th><th>Capital</th> </tr>
+	<tr><td>Maharashtra</td><td> Mumbai</td> </tr>
+          <tr><td>Gujarat</td><td> Gandhinagar</td> </tr></table><br>
+<p><i> [Write your code in the area provided below.] </i></p><br>
+<!-- <p> <b> &lt;?php </b></p>
+<iframe src="js/Script1.php" width="100%" height="800">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/if1.ob.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+    </style>
+    <script>
+    </script>
+</head> 
+<body>
+    <table style="width:100%">
+        <tr>
+            <td style="vertical-align:top ">
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="l5">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l6">&lt;/head&gt;</p>
+                <p id="l7">&lt;body&gt;</p>
+                <p id="l8">&lt;h1&gt;This is a If...Else Demo&lt;/h1&gt;</p>
+                <p id="l9">&lt;form name="FormSubmit" method="post" action="&lt;?php echo $_SERVER['PHP_SELF'];?&gt;"&gt;</p>
+                <p id="l10">Select an Image</p>
+                <p id="l11">&lt;input type=radio name=image value=1 &lt;?php echo (isset($_POST["image"]) && $_POST["image"] == 1) ? ' checked="checked"': "" ; ?&gt; /&gt; Keyboard</p>
+                <p id="l12">&lt;input type=radio name=image value=2 &lt;?php echo (isset($_POST["image"]) && $_POST["image"] == 2) ? ' checked="checked"': "" ; ?&gt; /&gt;Mouse</p>
+                <p id="l13">&lt;input type="submit" value="OK" /&gt;</p>
+                <p id="l14">&lt;/form&gt;</p>
+                <p id="l15">&lt;?php</p>
+                <p id="l16">if(isset($_POST['image'])) {</p>
+                <p id="l17">if($_POST['image'] == 1) {</p>
+                <p id="l18">echo '&lt;img src=keyboard.jpg /&gt; ';</p>
+                <p id="l19">} elseif($_POST['image'] == 2) {</p>
+                <p id="l20">echo '&lt;img src=mouse.jpg /&gt; ';</p>
+                <p id="l21">}</p>
+                <p id="l22">}</p>
+                <p id="l23">?&gt;</p>
+                <p id="l24">&lt;/body&gt;</p>
+                <p id="l25">&lt;/html&gt;</p>
+                <input type="button" onclick="initphp();" value="Execute PHP" /> 
+            </td>
+            <td style="vertical-align:top ">
+                
+                    <h1 id="h1" style="display:none ">This is a If...Else Demo</h1><br />
+                    <p style="display:none " id="h2">Select an Image</p>
+                    <input id="h3" type="radio" name="image1" value="1" checked="checked" style="display:none " /><p id="h4" style="display:none ">Keyboard</p>
+                    <input id="h5" type="radio" name="image1" value="2" style="display:none " /><p style="display:none " id="h6">Mouse</p> <br />
+                    <input type="button" value="Ok" onclick="setimg();" style="display:none " id="h7"/><br />
+                    <img id="i1" style="display:none " src="keyboard.jpg"  />
+                    <img id="i2" style="display:none " src="mouse.jpg" />
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p id="ht1" style ="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="ht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="ht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="ht7" style="display:none ">&lt;body&gt;</p></br>
+                <p id="ht8" style="display:none ">&lt;h1&gt; This is a If...Else Demo &lt;/h1&gt;</p><br />
+                <p id="ht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/if_else_demo.php"&gt;</p><br />
+                <p id="ht10" style="display:none ">&lt;h4&gt;Select an Image&lt;/h4&gt;</p><br />
+                <p id="ht11" style="display:none ">&lt;input type =radio name=image  value =1 <span id="k"></span> /&gt;Keyboard &lt;br/&gt;</p><br />
+                <p id="ht12" style="display:none ">&lt;input type =radio name=image value =2 <span id="m"></span>/&gt;Mouse&lt;br /&gt;</p><br />
+                <p id="ht13" style="display:none ">&lt;input type = submit value = OK /&gt;</p><br />
+                <p id="ht14" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="ht15" style="display:none ">&lt;img src=<span id="img_n"></span> /&gt;</p><br />
+                <p id="ht16" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="ht17" style="display:none ">&lt;/html&gt;</p><br />
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

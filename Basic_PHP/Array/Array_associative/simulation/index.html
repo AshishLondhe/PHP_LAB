@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+  <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+        var l = 1;
+        var l1 = 1;
+        var h = 3;
+        var k;
+        function initphp()
+        {
+            l = 1;
+            l1 = 1;
+            h = 3;
+            k=10
+            var i;
+            for(i=1;i<=20;i++)
+            {
+                document.getElementById("l" + i).style.background = "";
+                if(i<=7)
+                {
+                    document.getElementById("h" + i).style.display = "none";
+                }
+                if(i<=17)
+                    document.getElementById("ht" + i).style.display = "none";
+            }
+            l = 1;
+            k = 10;
+            time1 = setInterval("Timer1()", 1000);
+        }
+        function Timer1()
+            {
+                for(i=1;i<=20;i++)
+                {
+                    document.getElementById("l" + i).style.background = "";
+
+                }
+                document.getElementById("l" + l).style.background = "yellow";
+                if(l<=8)
+                document.getElementById("ht" + l).style.display = "inline";
+                if (l == 7)
+                {
+                    document.getElementById("h1").style.display = "inline";
+
+                }
+                else if (l == 8)
+                {
+                    document.getElementById("h2").style.display = "inline";
+                }
+                 l++;
+                if(l>9)
+                {
+                    clearInterval(time1);
+                    h = 3;
+                    time2 = setInterval("Timer2()", 1000);
+                }
+        }
+        function Timer2()
+        {
+            for (i = 1; i <= 20; i++) {
+                document.getElementById("l" + i).style.background = "";
+
+            }
+            document.getElementById("l" + l).style.background = "yellow";
+            if (l == 14)
+            {
+                if(h<=7)
+                    document.getElementById("h" + h).style.display = "table-row";
+                document.getElementById("ht" + k).style.display = "inline";
+                h++;
+                k++;
+            }
+            l++;
+            if(l>16)
+            {
+                l = 12;
+                l1++;
+            }
+            if(l1>5)
+            {
+                clearInterval(time2);
+                for (i = 1; i <= 20; i++) {
+                    document.getElementById("l" + i).style.background = "";
+
+                }
+                document.getElementById("l" + 17).style.background = "yellow";
+                l = 17;
+                k = 15;
+                time3 = setInterval("Timer3()", 1000);
+
+            }
+        }
+        function Timer3()
+        {
+            for (i = 1; i <= 20; i++) {
+                document.getElementById("l" + i).style.background = "";
+
+            }
+            document.getElementById("l" + l).style.background = "yellow";
+            if (l == 17)
+
+                document.getElementById("ht15").style.display = "inline";
+            if (l == 18)
+                document.getElementById("ht16").style.display = "inline";
+            if(l==19)
+            document.getElementById("ht17").style.display = "inline";
+            l++;
+
+            if(l>20)
+            {
+                clearInterval(time3);
+            }
+        }
+    </script>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td style="vertical-align:top">
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l5">&lt;/head&gt;</p>
+                <p id="l6">&lt;body&gt;</p>
+                <p id="l7">&lt;h1&gt;This is an Associative array.&lt;/h1&gt;</p>
+                <p id="l8">&lt;h2&gt; Index value is of Type String&lt;/h2&gt;</p>
+                <p id="l9">&lt;?php</p>
+                <p id="l10">$TotalNo = array("SE"=&gt;445 ,"TE"=&gt; 345 ,"BE"=&gt;250, "ME" =&gt;40);</p>
+                <p id="l11">echo"&lt;table border=1&gt;&lt;tr&gt;&lt;th&gt;Year&lt;/th&gt;&lt;th&gt;No of Students&lt;/th&gt;&lt;/tr&gt;";</p>
+                <p id="l12">foreach($TotalNo as $key =&gt; $key_value)</p>
+                <p id="l13">{</p>
+                <p id="l14">echo "&lt;tr&gt;&lt;td&gt; $key &lt;/td&gt;&lt;td&gt;$key_value";</p>
+                <p id="l15">echo "&lt;/tr&gt;";</p>
+                <p id="l16">}</p>
+                <p id="l17">echo"&lt;/table&gt;";</p>
+                <p id="l18">?&gt;</p>
+                <p id="l19">&lt;/body&gt;</p>
+                <p id="l20">&lt;/html&gt;</p>
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="initphp();" />
+            </td>
+            <td style="vertical-align:top">
+                <h1 id="h1" style="display:none ">This is an Associative array</h1><br />
+                <h2 id="h2" style="display:none ">Index value is of Type String</h2><br />
+                <table>
+                    <tr id="h3" style="display:none ">
+                        <th>Year</th>
+                        <th>No of Students</th>
+                    </tr>
+                    <tr id="h4" style="display:none ">
+                        <td>SE</td>
+                        <td>445</td>
+                    </tr>
+                    <tr id="h5" style="display:none ">
+                        <td>TE</td>
+                        <td>345</td>
+                    </tr>
+                    <tr id="h6" style="display:none ">
+                        <td>BE</td>
+                        <td>250</td>
+                    </tr>
+                    <tr id="h7" style="display:none ">
+                        <td>ME</td>
+                        <td>40</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p id="ht1" style="display:none">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p><br />
+                <p id="ht5" style="display:none">&lt;/head&gt;</p><br />
+                <p id="ht6" style="display:none">&lt;body&gt;</p><br />
+                <p id="ht7" style="display:none">&lt;h1&gt; This is an Associative array.&lt;/h1&gt;</p><br />
+                <p id="ht8" style="display:none">&lt;h2&gt; Index value is of Type String&lt;/h2&gt;</p><br />
+                <p id="ht9" style="display:none">&lt;table border=1&gt;</p><br />
+                <p id="ht10" style="display:none">&lt;tr&gt;&lt;th&gt;Year&lt;/th&gt;&lt;th&gt;No of Students&lt;/th&gt;&lt;/tr&gt;</p><br />
+                <p id="ht11" style="display:none">&lt;tr&gt;&lt;td&gt; SE &lt;/td&gt;&lt;td&gt;445&lt;/tr&gt;</p><br />
+                <p id="ht12" style="display:none">&lt;tr&gt;&lt;td&gt; TE &lt;/td&gt;&lt;td&gt;345&lt;/tr&gt;</p><br />
+                <p id="ht13" style="display:none">&lt;tr&gt;&lt;td&gt; BE &lt;/td&gt;&lt;td&gt;250&lt;/tr&gt;</p><br />
+                <p id="ht14" style="display:none">&lt;tr&gt;&lt;td&gt; ME &lt;/td&gt;&lt;td&gt;40&lt;/tr&gt;</p><br />
+                <p id="ht15" style="display:none">&lt;/table&gt;</p><br />
+                <p id="ht16" style="display:none">&lt;/body&gt;</p><br />
+                <p id="ht17" style="display:none">&lt;/html&gt;</p><br />
+</td>
+ </tr>
+</table><br>
+      <p >Task 1) Write a PHP script to create an associative array of five students' names & marks with following details. <br/>
+        <br/><table border =1>
+        <tr><td>Name</td><td> Marks</td> </tr>
+        <tr><td>abc</td><td>55</td> </tr>
+        <tr><td>def</td><td>30</td> </tr>
+        <tr><td>hig</td><td>45</td> </tr>
+        </table> <br/>
+      <p > Task 2) Sort the array created in Task 1 and display in ascending and descending order.<br/>
+       </p> <br/>
+      <p><i> [Write your code in the area provided below.] </i></p><br>
+      <!-- <p> <b> &lt;?php <b/></p>
+      <iframe src="js/Script1.php" width="100%" height="500">
+      </iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+</body>
+</html>

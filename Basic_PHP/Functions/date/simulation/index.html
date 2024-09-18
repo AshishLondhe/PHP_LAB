@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+
+    <script>
+
+    </script>
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+    </style>
+    <script src="js/date1.ob.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l5">&lt;/head&gt;</p>
+                <p id="l6">&lt;body&gt;</p>
+                <p id="l7">&lt;h1&gt; This  program helps in understanding Date  functions &lt;/h1&gt;</p>
+                <p id="l8">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="l9">&lt;table&gt;</p>
+                <p id="l10">&lt;tr&gt;&lt;td&gt; Select the Function : &lt;/td&gt;</p>
+                <p id="l11">&lt;td&gt;&lt;select name=DateFun&gt;</p>
+                <p id="l12">&lt;option value= 1 &lt;?php echo (isset($_POST["DateFun"]) && $_POST["DateFun"] == "1") ? ' selected="selected" ': "" ;?&gt; &gt;Today's Date&lt;/option&gt;</p>
+                <p id="l13">&lt;option value= 2 &lt;?php echo (isset($_POST["DateFun"]) && $_POST["DateFun"] == "2") ? ' selected="selected" ': "" ;?&gt; &gt;Today's Day&lt;/option&gt;</p>
+                <p id="l14">&lt;option value= 3 &lt;?php echo (isset($_POST["DateFun"]) && $_POST["DateFun"] == "3") ? ' selected="selected" ': "" ;?&gt; &gt;Current Time&lt;/option&gt;</p>
+                <p id="l15">&lt;option value= 4 &lt;?php echo (isset($_POST["DateFun"]) && $_POST["DateFun"] == "4") ? ' selected="selected" ': "" ;?&gt; &gt;Month &lt;/option&gt;</p>
+                <p id="l16">&lt;option value= 5 &lt;?php echo (isset($_POST["DateFun"]) && $_POST["DateFun"] == "5") ? ' selected="selected" ': "" ;?&gt; &gt;Year &lt;/option&gt;</p>
+                <p id="l17">&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l18">&lt;tr&gt; &lt;td&gt;&lt;input type=submit value=Display&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l19">&lt;/table&gt;</p>
+                <p id="l20">&lt;/form&gt;</p>
+                <p id="l21">&lt;?php</p>
+                <p id="l22">if( count($_POST) &gt; 0  )</p>
+                <p id="l23">{</p>
+                <p id="l24">$varDate = $_POST["DateFun"];</p>
+                <p id="l25">if($varDate == 1)</p>
+                <p id="l26">echo " &lt;h2&gt;Date is : ".date("Y.m.d")."&lt;/h2&gt;";</p>
+                <p id="l27">else if($varDate == 2)</p>
+                <p id="l28">echo " &lt;h2&gt;Today's day   : ".date("D")."&lt;/h2&gt;";</p>
+                <p id="l29">else if($varDate == 3)</p>
+                <p id="l30">echo " &lt;h2&gt;Time is : ".date("H:i:sa")."&lt;/h2&gt;";</p>
+                <p id="l31">else if($varDate == 4)</p>
+                <p id="l32">echo " &lt;h2&gt;Month is : ".date("F")."&lt;/h2&gt;";</p>
+                <p id="l33">else if($varDate == 5)</p>
+                <p id="l34">echo " &lt;h2&gt;Year  is : ".date("Y")."&lt;/h2&gt;";</p>
+                <p id="l35">}</p>
+                <p id="l36">?&gt;</p>
+                <p id="l37">&lt;/body&gt;</p>
+                <p id="l38">&lt;/html&gt;</p>
+
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="initphp();" />
+
+
+
+
+            </td>
+            <td  style="vertical-align:top ">
+                <h2 id="h1" style="display:none ">This program helps in understanding Date  functions</h2><br />
+                <p id="h2" style="display:none ">Select the Function:</p><br />
+                <p id="h3" style="display:none ">
+                    <select name="method" id="list1">
+                        <option value="1">Todays Date</option>
+                        <option value="2">Todays Day</option>
+                        <option value="3">Current Time</option>
+                        <option value="4">Month</option>
+                        <option value="5">Year</option>
+                    </select>
+                </p><br />
+                <p id="h4" style="display:none "><input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value=Display onclick="cal();" /></p><br />
+                <h3 id="h5"></h3>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p id="ht1" style="display:none">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p><br />
+                <p id="ht5" style="display:none">&lt;/head&gt;</p><br />
+                <p id="ht6" style="display:none">&lt;body&gt;</p><br />
+                <p id="ht7" style="display:none">&lt;h1&gt; This is program help in understanding Date  functions &lt;/h1&gt;</p><br />
+                <p id="ht8" style="display:none">&lt;form name=formSubmit method="post" action="/vlab/Date_fun.php"&gt;</p><br />
+                <p id="ht9" style="display:none">&lt;table&gt;</p><br />
+                <p id="ht10" style="display:none">&lt;tr&gt;&lt;td&gt; Select the Function : &lt;/td&gt;</p><br />
+                <p id="ht11" style="display:none">&lt;td&gt;&lt;select name=DateFun&gt;</p><br />
+                <p id="ht12" style="display:none">&lt;option value= 1  <span id="date"></span>&gt;Today's Date&lt;/option&gt;</p><br />
+                <p id="ht13" style="display:none">&lt;option value= 2  <span id="day"></span>  &gt;Today's Day&lt;/option&gt;</p><br />
+                <p id="ht14" style="display:none">&lt;option value= 3  <span id="time"></span>&gt;Current Time&lt;/option&gt;</p><br />
+                <p id="ht15" style="display:none">&lt;option value= 4  <span id="mon"></span>&gt;Month &lt;/option&gt;</p><br />
+                <p id="ht16" style="display:none">&lt;option value= 5  <span id="year"></span>&gt;Year &lt;/option&gt;</p><br />
+                <p id="ht17" style="display:none">&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht18" style="display:none">&lt;tr&gt; &lt;td&gt;&lt;input type=submit value=Display&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht19" style="display:none">&lt;/table&gt;</p><br />
+                <p id="ht20" style="display:none">&lt;/form&gt;</p><br />
+                <p id="ht21" style="display:none">&lt;h2&gt;<span id="date_val"></span> &lt;/h2&gt;</p><br />
+                <p id="ht22" style="display:none">&lt;/body&gt;</p><br />
+                <p id="ht23" style="display:none">&lt;/html&gt;</p><br />
+</td>
+        </tr>
+    </table><br>
+<p>Task 1) Write a PHP script to display the list of available time zones. <br/>
+<p> Task 2) Write a PHP script to display the time in the default time zone and then, change the default time zone to Asia/Calcutta.<br/>
+ </p> <br/>
+<p><i> [Write your code in the area provided below.] </i ></p><br>
+<!-- <p> <b> &lt;?php <b/></p>
+<iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+</body>
+</html>

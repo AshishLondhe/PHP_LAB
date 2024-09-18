@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/while.ob.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <table style="width:100%">
+        <tr>
+            <td>
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="l5">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l6">&lt;/head&gt;</p>
+                <p id="l7">&lt;body&gt;</p>
+                <p id="l8">&lt;h1&gt;This is a while Demo.&lt;/h1&gt;</p>
+                <p id="l9">&lt;h2&gt;Program displays the Fibonacci Series&lt;/h2&gt;</p>
+                <p id="l10">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="l11">&lt;table&gt;</p>
+                <p id="l12"> &lt;/tr&gt;&lt;td&gt;Enter the Number of terms &lt;/td&gt;</p>
+                <p id="l13"> &lt;td&gt;&lt;input type="text" name="value1" value="&lt;?php echo isset($_POST['value1']) ? $_POST['value1'] : ''; ?&gt;" /&gt; &lt;/td&gt; &lt;/tr&gt;</p>
+                <p id="l14"> &lt;tr&gt;&lt;td&gt;&lt;input type="Submit" value="Calculate" /&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l15">&lt;/table&gt;</p>
+                <p id="l16">&lt;/form&gt;</p>
+                <p id="l17">&lt;?php</p>
+                <p id="l18">if( count($_POST) &gt; 0 && isset($_POST["value1"])  )</p>
+                <p id="l19">{</p>
+                <p id="l20">$fib1 = 0;</p>
+                <p id="l21">$fib2 = 1;</p>
+                <p id="l22">$count =0;</p>
+                <p id="l23">echo" &lt;b&gt;";</p>
+                <p id="l24">echo " $fib1 ," ;</p>
+                <p id="l25">echo " $fib2 ," ;</p>
+                <p id="l26">while ($count &lt; $_post["value1"] -2 )</p>
+                <p id="l27">{</p>
+                <p id="l28"> $fib3=$fib2 + $fib1 ;</p>
+                <p id="l29"> echo " $fib3 , " ;</p>
+                <p id="l30"> $fib1=$fib2 ;</p>
+                <p id="l31">$fib2=$fib3 ;</p>
+                <p id="l32">$count=$count + 1;</p>
+                <p id="l33">}</p>
+                <p id="l34">}</p>
+                <p id="l35">?&gt;</p>
+                <p id="l36"> &lt;/body&gt;</p>
+                <p id="l37"> &lt;/html&gt;</p>
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" onclick="initphp();" />
+
+
+            </td>
+            <td style="vertical-align:top">
+                <h1 id="h1" style="display:none ">This is a while Demo </h1><br />
+                <h2 id="h2" style="display:none ">Program displays the Fibonacci Series </h2>
+                <table id="tb1">
+                    <tr>
+                        <td id="h3" style="display:none ">Enter Number of terms </td>
+                        <td id="h4" style="display:none "><input type="text" id="t1" /> </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" id="h5" style="display:none ">
+                            <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Calculate" onclick="cal();" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                    </tr>
+                </table>
+            </td>
+
+
+        </tr>
+        <tr>
+            <td style="vertical-align:top " colspan="2">
+                <p id="ht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none ">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none ">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p><br />
+                <p id="ht5" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="ht6" style="display:none "> &lt;body&gt;</p><br />
+                <p id="ht7" style="display:none ">&lt;h1&gt; This is a while Demo &lt;/h1&gt;</p><br />
+                <p id="ht8" style="display:none ">&lt;h2&gt;Program displays the Fibonacci Series&lt;/h2&gt;</p><br />
+                <p id="ht9" style="display:none "> &lt;form name="formSubmit" method="post" action="/vlab/while.php"&gt;</p><br />
+                <p id="ht10" style="display:none "> &lt;table&gt;</p><br />
+                <p id="ht11" style="display:none "> &lt;tr&gt;</p><br />
+                <p id="ht12" style="display:none ">&lt;td&gt;Enter the Number of terms &lt;/td&gt;</p><br />
+                <p id="ht13" style="display:none "> &lt;td&gt;&lt;input type="text" name="value1" value=<span id="val"></span> /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht14" style="display:none "> &lt;tr&gt;&lt;td&gt;</p><br />
+                <p id="ht15" style="display:none ">&lt;input type="Submit" value="Calculate" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht16" style="display:none "> &lt;/table&gt;</p><br />
+                <p id="ht17" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="a1"></p><br />
+                <p id="ht18" style="display:none "> &lt;/body&gt;</p><br />
+                <p id="ht19" style="display:none "> &lt;/html&gt;</p><br />
+
+            </td>
+        </tr>
+    </table><br><b>
+<p >Task 1 )Write a PHP script  using the 'while' loop to display the following pattern:<br>
+	 *<br/>**<br/>***<br/>****<br/>*****<br/>
+<p> Task 2 ) Modify the program in the Task 1 to display the following pattern:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*<br/>&nbsp;&nbsp;&nbsp;*&nbsp;*<br/>&nbsp;&nbsp;*&nbsp;*&nbsp;*<br/>&nbsp;*&nbsp;*&nbsp;*&nbsp;*<br/>
+</p> <br/></b>
+ <p><i> [Write your code in the area provided below.] </i></p><br>
+<!-- <p> <b> &lt;?php <b/></p>
+<iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+
+</body>
+</html>

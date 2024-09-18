@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+   <script src="js/src/mysql.ob.js"></script>
+    <script src="js/src/mysql.js"></script>
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+
+
+
+    </script>
+</head>
+<body onload="tpage()">
+    <table style="width:100%">
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Create Database" onclick="cpage();" id="b1"   />
+                <input type="button" value="Create Table" onclick="tpage();" id="b2" style="display:none " />
+                <input type="button" value="Insert Data" onclick="ipage();" id="b3" style="display:none " />
+                <input type="button" value="Display Data" onclick="dpage();" id="b4" style="display:none " />
+                <input type="button" value="Modify Data" onclick="mpage();" id="b5" style="display:none " />
+                <input type="button" value="Delete Data" onclick="delpage();" id="b6" style="display:none " />
+            </td>
+        </tr>
+        <tr id="t1">
+            <td>
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;?php</p>
+                <p id="l3"> session_start();</p>
+                <p id="l4">?&gt;</p>
+                <p id="l5">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="l6">&lt;head&gt;</p>
+                <p id="l7">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="l8">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l9">&lt;/head&gt;</p>
+                <p id="l10">&lt;body&gt;</p>
+                <p id="l11">&lt;h1&gt; This program creates new database in MYSQL&lt;/h1&gt;</p>
+                <p id="l12">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="l13"> &lt;table&gt;</p>
+                <p id="l14">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = CreateDatabase name=createDB&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l15">&lt;/table&gt;</p>
+                <p id="l16">&lt;/form&gt;</p>
+                <p id="l17">&lt;?php</p>
+                <p id="l18">if ( isset( $_POST['createDB'] ) )</p>
+                <p id="l19">{	$host = "localhost";</p>
+                <p id="l20">    $user = "root";</p>
+                <p id="l21">    $password = "";</p>
+                <p id="l22">    $conn = new mysqli($host, $user, $password);</p>
+                <p id="l23">    if ($conn === false) {</p>
+                <p id="l24">        die("ERROR: Could not connect. " . mysqli_connect_error());}</p>
+                <p id="l25">    $sql = "CREATE DATABASE testDB";</p>
+                <p id="l26">    if ($conn-&gtquery($sql) === true) {</p>
+                <p id="l27">        echo "Database testDB is created";	}</p>
+                <p id="l28">    else {	echo "ERROR: Could not execute query: $sql. " . $conn-&gterror;}</p>
+                <p id="l29">  $conn-&gt;close();}</p>
+                <p id="l30">?&gt;</p>
+                <p id="l31">&lt;/body&gt;</p>
+                <p id="l32">&lt;/html&gt;</p>
+                <input type="button" style="background-color:Cyan;color:black;width:230px;height:40px;font-size:16px;" value="Execute PHP create database" onclick="dbinitphp();" />
+
+            </td>
+            <td style="vertical-align:top ">
+                <h3 id="dh1" style="display:none">This program creates new database in MYSQL</h3><br />
+                <p id="dh2" style="display:none"><input type="button"  value="CreateDatabase" onclick="createdb();"></p>
+                <p id="dh3"></p>
+            </td>
+        </tr>
+        <tr id="page1">
+        <td  colspan ="2">
+                <p id="ht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="ht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="ht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="ht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="ht8" style="display:none ">&lt;h1&gt;This program creates new database in MYSQL&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="ht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/7_mysql/mysqliCreateDBandTable.php"&gt;</p><br />
+                <p id="ht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="ht11" style="display:none ">&lt;tr&gt;&lt;td&gt; input type = submit  value = CreateDatabase name=createDB /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht12" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="ht13" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="ht14" style="display:none ">Database testDB is created. &lt;br&gt;</p><br />
+                <p id="ht15" style="display:none ">ERROR: Could not execute query: CREATE DATABASE testDB. Can't create database 'testdb'; database exists &lt;br&gt;</p><br />
+                <p id="ht16" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="ht17" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+        <tr id="t2" style="display:none ">
+            <td colspan="2">
+                <p id="m1">&lt;!DOCTYPE html&gt;</p>
+                <p id="m2">&lt;?php</p>
+                <p id="m3"> session_start();</p>
+                <p id="m4">?&gt;</p>
+                <p id="m5">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="m6">&lt;head&gt;</p>
+                <p id="m7">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="m8">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="m9">&lt;/head&gt;</p>
+                <p id="m10">&lt;body&gt;</p>
+                <p id="m11">&lt;h1&gt; This program creates new table in MYSQL&lt;/h1&gt;</p>
+                <p id="m12">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="m13">&lt;table&gt;</p>
+                <p id="m14">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = CreateTable name=createTable&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="m15">&lt;/table&gt;</p>
+                <p id="m16"> &lt;/form&gt;</p>
+                <p id="m17">&lt;?php</p>
+                <p id="m18">if( isset($_POST['createTable'] ) )</p>
+                <p id="m19">{	$host="localhost";</p>
+                <p id="m20">$user="root";</p>
+                <p id="m21">$password="";</p>
+                <p id="m22">$db="testDB";</p>
+                <p id="m23">$mysqli = new mysqli($host,$user,$password,$db);</p>
+                <p id="m24">if ($mysqli === false) {</p>
+                <p id="m25">die("ERROR: Could not connect. " .mysqli_connect_error());}</p>
+                <p id="m26">$sql = "CREATE TABLE Cars (name VARCHAR(30) NOT NULL  	PRIMARY KEY,<br />horsepower  INT(6),<br /> weight INT(4),<br />acceleration INT(4))";</p>
+                <p id="m27"> if ($mysqli-&gtquery($sql) === true) {</p>
+                <p id="m28">echo "Table 'Cars' is created";</p>
+                <p id="m29">echo "with fields: name, horsepower, weight, 		acceleration";	}</p>
+                <p id="m30">else {	echo "ERROR: Could not execute query: $sql. " . $mysqli-&gterror;	}</p>
+                <p id="m31">$mysqli-&gt;close(); }</p>
+                <p id="m32">?&gt;</p>
+                <p id="m33">&lt;/body&gt;</p>
+                <p id="m34">&lt;/html&gt;</p>
+                <input type="button" style="background-color:Cyan;color:black;width:200px;height:40px;font-size:16px;"  value="Execute PHP create table" onclick="inittable();" />
+
+            </td>
+            <td style="vertical-align:top" colspan="2" style="display:none">
+                <h3 id="th1" style="display:none">This program creates new table in MYSQL</h3><br />
+                <input id="th2" type="button"  value="CreateTable" onclick="createtable();" style="display:none" />
+                <p id="th3"></p>
+                <table>
+                    <tr style="display:none" id="th4">
+                        <th colspan="4">Cars</th>
+                    </tr>
+                    <tr style="display:none" id="th5">
+
+                        <th>name</th>
+                        <th>horsepower</th>
+                        <th>weight</th>
+                        <th>acceleration</th>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+        <tr id="page2" style="display:none">
+            <td colspan ="2">
+                <p id="mht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="mht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="mht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="mht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="mht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="mht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="mht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="mht8" style="display:none ">&lt;h1&gt;This program creates new Table in MYSQL&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="mht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/7_mysql/mysqliCreateDBandTable.php"&gt;</p><br />
+                <p id="mht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="mht11" style="display:none ">&lt;tr&gt;&lt;td&gt; input type = submit  value = CreateTable name=createTable /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="mht12" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="mht13" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="mht14" style="display:none ">Table 'Cars' is created with fields: name, horsepower, weight, acceleration &lt;br&gt;</p><br />
+                <p id="mht15" style="display:none ">ERROR: Could not execute query: CREATE TABLE Cars (name VARCHAR(30) NOT NULL PRIMARY KEY, horsepower  INT(6), weight INT(4),acceleration INT(4)). Table 'cars' already exists  &lt;br&gt;</p><br />
+                <p id="mht16" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="mht17" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+        <tr style="display:none " id="t3">
+            <td>
+                <p id="ll1">&lt;!DOCTYPE html&gt;</p>
+                <p id="ll2">&lt;?php</p>
+                <p id="ll3"> session_start();</p>
+                <p id="ll4">?&gt;</p>
+                <p id="ll5">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="ll6">&lt;head&gt;</p>
+                <p id="ll7">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="ll8">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="ll9">&lt;/head&gt;</p>
+                <p id="ll10">&lt;body&gt;</p>
+                <p id="ll11">&lt;h1&gt; This program inserts records in the table&lt;/h1&gt;</p>
+                <p id="ll12">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="ll13"> &lt;table&gt;</p>
+                <p id="ll14">&lt;tr&gt;&lt;td&gt; Enter Car name&lt;/td&gt;&lt;td&gt; &lt;input type=text name=name  value= "&lt;?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?&gt;" &lt;/td&gt;</p>
+                <p id="ll15">&lt;td&gt; Enter Car horsepower&lt;/td&gt;&lt;td&gt; &lt;input type=text name=horsepower  value= "&lt;?php echo isset($_POST['horsepower']) ? $_POST['horsepower'] : ''; ?&gt;" &lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="ll16">&lt;tr&gt;&lt;td&gt; Enter Car weight&lt;/td&gt;&lt;td&gt; &lt;input type=text name=weight  value= "&lt;?php echo isset($_POST['weight']) ? $_POST['weight'] : ''; ?&gt;" &lt;/td&gt;</p>
+                <p id="ll17">&lt;td&gt; Enter Car acceleration &lt;/td&gt;&lt;td&gt; &lt;input type=text name=acceleration  value= "&lt;?php echo isset($_POST['acceleration']) ? $_POST['acceleration'] : ''; ?&gt;" &lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="ll18"> &lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = Insert name=insert&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="ll19">&lt;/table&gt;</p>
+                <p id="ll20"> &lt;/form&gt;</p>
+                <p id="ll21">&lt;?php</p>
+                <p id="ll22">$host="localhost";</p>
+                <p id="ll23">$user="root";</p>
+                <p id="ll24"> $password="";</p>
+                <p id="ll25">$db="testDB";</p>
+                <p id="ll26">$mysqli = new mysqli($host,$user,$password,$db);</p>
+                <p id="ll27">  if ($mysqli === false) {</p>
+                <p id="ll28">die("ERROR: Could not connect. " . mysqli_connect_error());}</p>
+                <p id="ll29">if ( isset( $_POST['insert'] ) )</p>
+                <p id="ll30">{	if( count( $_POST['insert'])&gt0 && isset($_POST['name']) && isset($_POST['horsepower']) && isset($_POST['weight']) && isset($_POST['acceleration']) )</p>
+                <p id="ll31">{	$sql = "INSERT INTO Cars (name, horsepower, weight, acceleration) VALUES ('".$_POST['name']."',".$_POST['horsepower'].",".$_POST['weight'].",".$_POST['acceleration'].")";</p>
+                <p id="ll32">if ($mysqli-&gtquery($sql) === true) {</p>
+                <p id="ll33">echo "Row inserted"."&ltbr&gt";}</p>
+                <p id="ll34">else {	echo "ERROR: Could not execute query: $sql. " . $mysqli-&gterror;	}</p>
+                <p id="ll35"> }</p>
+                <p id="ll36">}</p>
+                <p id="ll37">$mysqli-&gt;close();</p>
+                <p id="ll38"> ?&gt;</p>
+                <p id="ll39"> &lt;/body&gt;</p>
+                <p id="ll40">&lt;/html&gt;</p>
+                <input type="button"  value="Execute PHP Insert" onclick="initinsert();" />
+
+            </td>
+            <td style="vertical-align:top">
+                <h3 id="ih1" style="display:none ">This program inserts records from the table</h3>
+                <table>
+                    <tr id="ih2" style="display:none ">
+                        <td>Enter Car name</td>
+                        <td><input type="text" id="it1" /> </td>
+                    </tr>
+                    <tr id="ih3" style="display:none ">
+                        <td>Enter Car horsepower</td>
+                        <td><input type="text" id="it2" /> </td>
+                    </tr>
+                    <tr id="ih4" style="display:none ">
+                        <td>Enter Car weight</td>
+                        <td><input type="text" id="it3" /> </td>
+                    </tr>
+                    <tr id="ih5" style="display:none ">
+                        <td>Enter Car acceleration</td>
+                        <td><input type="text" id="it4" /> </td>
+                    </tr>
+                    <tr id="ih6" style="display:none ">
+                        <td colspan="2"><input type="button"   id="it5" value="Insert" onclick="insertdata();" /> </td>
+
+                    </tr>
+                </table>
+                <br />
+                <p id="ih7"></p>
+                <table id="insert1">
+                    <tr>
+                        <th>name</th>
+                        <th>horsepower</th>
+                        <th>weight</th>
+                        <th>acceleration</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr id="page3" style="display:none">
+            <td colspan="2">
+                <p id="llht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="llht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="llht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="llht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="llht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="llht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="llht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="llht8" style="display:none ">&lt;h1&gt;This program inserts records in the table&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="llht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/7_mysql/mysqliInsertSelectDeleteUpdate.php"&gt;</p><br />
+                <p id="llht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="llht11" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter Car name&lt;/td&gt;&lt;td&gt;&lt;input type=text name= "name" value=</p><br />
+                <p id="llht12" style="display:none ">&lt;td&gt; Enter Car horsepower&lt;/td&gt;&lt;td&gt; &lt;input type=text name=horsepower  value= </p><br />
+                <p id="llht13" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter Car weight&lt;/td&gt;&lt;td&gt; &lt;input type=text name=weight  value= </p><br />
+                <p id="llht14" style="display:none ">&lt;td&gt; Enter Car acceleration &lt;/td&gt;&lt;td&gt; &lt;input type=text name=acceleration  value= </p></br>
+                <p id="llht15" style="display:none "> &lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = Insert name=insert&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p></br>
+                <p id="llht16" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="llht17" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="llht18" style="display:none ">Row inserted &lt;br&gt;</p><br />
+                <p id="llht19" style="display:none ">ERROR: Could not execute query:INSERT INTO Cars (name, horsepower, weight, acceleration) VALUES   &lt;br&gt;</p>
+                <p id="llht20" style="display:none ">Invalid Data Type &lt;br&gt;</p><br />
+                <p id="llht21" style="display:none ">alreay exists &lt;br&gt;</p><br />
+                <p id="llht22" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="llht23" style="display:none ">&lt;/html&gt;</p><br />
+        </td>
+        </tr>
+        <tr id="t4" style="display:none ">
+            <td>
+            <p id="n1">&lt;!DOCTYPE html&gt;</p>
+            <p id="n2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+            <p id="n3">&lt;head&gt;</p>
+            <p id="n4">&lt;meta charset="utf-8" /&gt;</p>
+            <p id="n5">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+            <p id="n6">&lt;/head&gt;</p>
+            <p id="n7">&lt;body&gt;</p>
+            <p id="n8">&lt;h1&gt; This program  Display records from the table&lt;/h1&gt;</p>
+            <p id="n9">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+            <p id="n10"> &lt;table&gt;</p>
+            <p id="n11">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = Display name=display&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+            <p id="n12">&lt;/table&gt;</p>
+            <p id="n13">&lt;/form&gt;</p>
+            <p id="n14">&lt;?php</p>
+            <p id="n15">$host="localhost";</p>
+            <p id="n16">$user="root";</p>
+            <p id="n17">$password="";</p>
+            <p id="n18">$db="testDB";</p>
+            <p id="n19">$mysqli = new mysqli($host,$user,$password,$db);</p>
+            <p id="n20">if ($mysqli === false) {</p>
+            <p id="n21">die("ERROR: Could not connect. " . mysqli_connect_error());}</p>
+            <p id="n22">if( isset($_POST['display']) )</p>
+            <p id="n23"> {	$sql = "SELECT name, horsepower,weight, acceleration FROM Cars";</p>
+            <p id="n24">if ($result = $mysqli-&gtquery($sql)) {</p>
+            <p id="n25"> if ($result-&gt;num_rows &gt; 0) {</p>
+            <p id="n26">echo "&lt;table&gt;";</p>
+            <p id="n27">while($row = $result-&gt;fetch_array()) {</p>
+            <p id="n28">echo "&lt;tr&gt;&lt;td&gt;".$row['name'] . "&lt;/td&gt;&lt;td&gt;" . $row['horsepower'] . "&lt;/td&gt;&lt;td&gt;" .$row['weight']."&lt;/td&gt;&lt;td&gt;" . $row['acceleration']."&lt;/td&gt;&lt;/tr&gt;&lt;br&gt;";}</p>
+            <p id="n29">$result-&gt;close();</p>
+            <p id="n30">echo "&lt;/table&gt;";}</p>
+            <p id="n31">else {	echo "No records matching your query were found.";}</p>
+            <p id="n32"> }</p>
+            <p id="n33">else {	echo "ERROR: Could not execute $sql. " . $mysqli-&gt;error;}</p>
+            <p id="n34">}</p>
+            <p id="n35"> $mysqli-&gt;close();</p>
+            <p id="n36">?&gt;</p>
+            <p id="n37"> &lt;/body&gt;</p>
+            <p id="n38"> &lt;/html&gt;</p>
+
+            <input type="button"  value="Execute PHP display" onclick="displayinit();" />
+            </td>
+            <td style="vertical-align:top ">
+                <h3 id="displayh" style="display:none">This program  Display records from the table</h3><br />
+                <input id="dish1" type="button" value="Display" style="display:none " onclick="displayexecute();" />
+                <table id="dish2" style="display:none ">
+                    <tr>
+                        <th>name</th>
+                        <th>horsepower</th>
+                        <th>weight</th>
+                        <th>acceleration</th>
+                    </tr>
+                </table>
+                <p id="dish3"></p>
+            </td>
+        </tr>
+        <tr id="page4" style="display:none">
+            <td colspan="2">
+                <p id="nht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="nht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="nht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="nht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="nht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="nht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="nht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="nht8" style="display:none ">&lt;h1&gt;This program Display records from the table&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="nht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/7_mysql/mysqliInsertSelectDeleteUpdate.php"&gt;</p><br />
+                <p id="nht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="nht11" style="display:none ">&lt;tr&gt;&lt;td&gt; input type = submit  value = Display name=display /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="nht12" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="nht13" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="nht14" style="display:none ">&lt;table&gt;&lt;tr&gt;&lt;td&gt;</p><br/>
+                <p id="nht15" style="display:none ">&lt;th&gt;name&lt;/th&gt;&lt;th&gt;horsepower&lt;/th&gt;&lt;th&gt;weight&lt;/th&gt;&lt;th&gt;acceleration&lt;/th&gt;&lt;td&gt;</p><br />
+                <p id="nht16" style="display:none ">&lt;/td&gt;&lt;td&gt;</p><br />
+                <p id="nht17" style="display:none ">&lt;/td;&gt;</p><br/>
+                <p id="nht18" style="display:none "> &lt;/tr&gt;&lt;br&gt;&lt;/table&gt;</p><br />
+                <p id="nht19" style="display:none ">No records matching your query were found. &lt;br&gt;</p><br />
+                <p id="nht20" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="nht21" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+        <tr id="t5" style="display:none ">
+            <td>
+                <p id="o1">&lt;!DOCTYPE html&gt;</p>
+                <p id="o2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="o3">&lt;head&gt;</p>
+                <p id="o4">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="o5">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="o6">&lt;/head&gt;</p>
+                <p id="o7">&lt;body&gt;</p>
+                <p id="o8">&lt;h1&gt; This program  Modify  records from the table&lt;/h1&gt;</p>
+                <p id="o9">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="o10">&lt;table&gt;</p>
+                <p id="o11">&lt;tr&gt;&lt;td&gt; Enter car name&lt;/td&gt;&lt;td&gt; &lt;input type=text name=cname  value= "&lt;?php echo isset($_POST['cname']) ? $_POST['cname'] : ''; ?&gt;" &gt;&lt;/td&gt;</p>
+                <p id="o12">&lt;td&gt; Enter new Weight&lt;/td&gt;&lt;td&gt; &lt;input type=text name=cweight  value= "&lt;?php echo isset($_POST['cweight']) ? $_POST['cweight'] : ''; ?&gt;" &gt;</p>
+                <p id="o13">&lt;/td&gt;&lt;td&gt;&lt;input type = submit  value = Modify name=modify&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="o14">&lt;/table&gt;</p>
+                <p id="o15">&lt;/form&gt;</p>
+                <p id="o16">&lt;?php</p>
+                <p id="o17">$host="localhost";</p>
+                <p id="o18"> $user="root";</p>
+                <p id="o19"> $password="";</p>
+                <p id="o20">$db="testDB";</p>
+                <p id="o21">$mysqli = new mysqli($host,$user,$password,$db);</p>
+                <p id="o22">if ($mysqli === false) {</p>
+                <p id="o23">die("ERROR: Could not connect. " . mysqli_connect_error());}</p>
+                <p id="o24">if( isset($_POST['modify']) )</p>
+                <p id="o25">{	$sql = "UPDATE Cars SET weight=".$_POST['cweight']." WHERE name='". $_POST['cname'] ."'";</p>
+                <p id="o26">if ($mysqli-&gtquery($sql) === true) {</p>
+                <p id="o27">echo "Record is updated";}</p>
+                <p id="o28">else {	echo "ERROR: Could not execute query: $sql. " . $mysqli-&gterror;	}</p>
+                <p id="o29"> }</p>
+                <p id="o30">$mysqli-&gt;close();</p>
+                <p id="o31">?&gt;</p>
+                <p id="o32">&lt;/body&gt;</p>
+                <p id="o33">&lt;/html&gt;</p>
+                <input type="button"   value="Execute PHP modify" onclick="modiinitphp();" />
+
+            </td>
+            <td style="vertical-align:top">
+                <h3 id="modih" style="display:none ">This program  Modify  records from the table</h3>
+                <table>
+                    <tr id="oh1" style="display:none ">
+                        <td>
+                            Enter car name
+                        </td>
+                        <td>
+                            <input type="text" id="ot1" />
+                        </td>
+                    </tr>
+                    <tr id="oh2" style="display:none ">
+                        <td>
+                            Enter new Weight
+                        </td>
+                        <td>
+                            <input type="text" id="ot2" />
+                        </td>
+                    </tr>
+                    <tr id="oh3" style="display:none ">
+                        <td colspan="2">
+                            <input type="button"  value=" Modify" onclick="modify();" />
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <p id="ottext"></p>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </td>
+        </tr>
+        <tr id="page5" style="display:none">
+            <td colspan="2">
+                <p id="oht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="oht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="oht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="oht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="oht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="oht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="oht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="oht8" style="display:none ">&lt;h1&gt; This program  Modify  records from the table&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="oht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/7_mysql/mysqliInsertSelectDeleteUpdate.php"&gt;</p><br />
+                <p id="oht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="oht11" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter Car name&lt;/td&gt;&lt;td&gt;&lt;input type=text name= "name" value=</p><br />
+                <p id="oht12" style="display:none ">&lt;td&gt;Enter new weight&lt;/td&gt;&lt;td&gt; &lt;input type=text name=cweight  value= </p><br />
+                <p id="oht13" style="display:none ">&lt;tr&gt;&lt;td&gt; input type = submit  value = Modify name=modify /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="oht14" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="oht15" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="oht16" style="display:none ">Record is updated. &lt;br&gt;</p><br />
+                <p id="oht17" style="display:none ">ERROR: Could not execute query:UPDATE Cars SET weight= &lt;br&gt;</p><br />
+                <p id="oht18" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="oht19" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+        <tr id="t6" style="display:none ">
+            <td>
+                <p id="p1">&lt;!DOCTYPE html&gt;</p>
+                <p id="p2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="p3">&lt;head&gt;</p>
+                <p id="p4">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="p5">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="p6">&lt;/head&gt;</p>
+                <p id="p7">&lt;body&gt;</p>
+                <p id="p8">&lt;h1&gt; This program Delete records from the table&lt;/h1&gt;</p>
+                <p id="p9">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="p10">&lt;table&gt;</p>
+                <p id="p11">&lt;tr&gt;&lt;td&gt; Enter car name&lt;/td&gt;&lt;td&gt; &lt;input type=text name=dname  value= "&lt;?php echo isset($_POST['dname']) ? $_POST['dname'] : ''; ?&gt;" &gt;</p>
+                <p id="p12">&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;input type = submit  value = Delete name=delete&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="p13">&lt;/table&gt;</p>
+                <p id="p14">&lt;/form&gt;</p>
+                <p id="p15">&lt;?php</p>
+                <p id="p16"> $host="localhost";</p>
+                <p id="p17">$user="root";</p>
+                <p id="p18">$password="";</p>
+                <p id="p19">$db="testDB";</p>
+                <p id="p20">$mysqli = new mysqli($host,$user,$password,$db);</p>
+                <p id="p21">if ($mysqli === false) {</p>
+                <p id="p22">die("ERROR: Could not connect. " . mysqli_connect_error());}</p>
+                <p id="p23">if( isset($_POST['delete']) )</p>
+                <p id="p24">{ $sql = "DELETE FROM Cars WHERE name='".$_POST['dname']."'";</p>
+                <p id="p25">if ($mysqli-&gtquery($sql) === true) {</p>
+                <p id="p26">echo "Record deleted from table.";}</p>
+                <p id="p27">else {	echo "ERROR: Could not execute query: $sql. " . $mysqli-&gterror;}</p>
+                <p id="p28">}</p>
+                <p id="p29">$mysqli-&gtclose();</p>
+                <p id="p30">?&gt;</p>
+                <p id="p31">&lt;/body&gt;</p>
+                <p id="p32">&lt;/html&gt;</p>
+                <input type="button"  value="Execute PHP Delete" onclick="initdelete();" />
+            </td>
+            <td style="vertical-align:top ">
+                <h3 id="delh1" style="display:none ">This program Delete records from the table</h3>
+                <table>
+                    <tr id="delh2" style="display:none ">
+                        <td>Enter car name </td>
+                        <td><input type="text" id="dtext" /> </td>
+                    </tr>
+                    <tr id="delh3" style="display:none ">
+                        <td colspan="2"><input type="button"  value="Delete" onclick="deletedata();" /> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p id="delh4"></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr id="page6" style="display:none">
+            <td colspan="2">
+                <p id="pht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="pht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="pht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="pht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="pht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="pht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="pht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="pht8" style="display:none ">&lt;h1&gt; This program  Modify  records from the table&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="pht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/7_mysql/mysqliInsertSelectDeleteUpdate.php"&gt;</p><br />
+                <p id="pht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="pht11" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter Car name&lt;/td&gt;&lt;td&gt;&lt;input type=text name= "dname" value=</p><br />
+                <p id="pht12" style="display:none ">&lt;tr&gt;&lt;td&gt; input type = submit  value = Delete name=delete /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="pht13" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="pht14" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="pht15" style="display:none ">Record deleted from table. &lt;br&gt;</p><br />
+                <p id="pht16" style="display:none ">ERROR: Could not execute query:DELETE FROM Cars WHERE name=</p><br />
+                <p id="pht17" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="pht18" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+    </table>
+<br>
+<p>Task 1) Write a PHP script to create a table <b>Student</b> with the student details as shown below:<br/>
+<br/><table border =1>   <tr><td>Roll_No.</td><td>Name</td>
+	<td>Class</td><td> Marks</td> </tr>
+ </table>
+<br/>
+<p > Task 2) Write a PHP script to:<br/>
+ a. insert the following details into the table created in Task-1 and display the below given table :<br/>
+<br/><table border =1>
+<tr><td>Roll_No.</td><td>Name</td>
+<td>Class</td><td> Marks</td> </tr>
+<tr><td>1</td><td>abc</td><td>FE</td><td>55</td> </tr>
+<tr><td>2</td><td>def</td><td>FE</td><td>30</td> </tr>
+<tr><td>3</td><td>hig</td><td>FE</td><td>45</td> </tr>
+</table> <br/>
+<p >Perform the following operation using the above table.<br/>
+b. modify the marks of Roll No. 2 to 67 and display the table.<br/>
+c. delete entry for Roll No. 3 and display the table.<br/>
+ </p> <br/>
+<p><i>[Write your code in the area provided below.]  </i> </p><br>
+<!-- <p> <b> &lt;?php <b/></p>
+<iframe src="js/Script1.php" width="100%" height="800">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+</body>
+</html>

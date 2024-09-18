@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Google Tag Manager-->
+    <script class="gtm">
+      var dataLayer = [
+        {
+          labName: "Computer programming",
+          discipline: "Computer Science and Engineering",
+          college: "IIITH",
+          phase: "2",
+          expName: "Functions",
+          expShortName: "functions",
+        },
+      ];
+
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&amp;l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-W59SWTR");
+    </script>
+    <!--End Google Tag Manager-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <meta name="experiment-short-name" content="functions" />
+    <meta name="developer-institute" content="IIITH" />
+    <meta name="learning-unit" content="FUNCTIONS" />
+    <meta name="task-name" content="Theory" />
+
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0" />
+    <title>PHP Lab</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"
+      integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/github-markdown.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.6-b/css/style.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/vlabs-style.css" />
+
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      h2,
+      h3 {
+        font-weight: 800;
+      }
+    </style>
+  </head>
+
+  <body
+    class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between"
+  >
+    <!--Google Tag Manager (noscript)-->
+    <noscript class="gtm">
+      <iframe
+        height="0"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR"
+        style="display: none; visibility: hidden"
+        width="0"
+      >
+      </iframe>
+    </noscript>
+    <!--End Google Tag Manager (noscript)-->
+
+    <header class="vlabs-header sticky-top bg-white">
+      <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+        <button class="navbar-toggler px-4" type="button" onclick="toggle()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="d-flex justify-content-center">
+          <a href="https://www.pvgcoet.ac.in/" class="navbar-brand">
+            <img
+              src="./assets/images/Logo.jpeg"
+              alt="vlabs logo"
+              class="vlabs-logo"
+            />
+          </a>
+        </div>
+
+        <div
+          id="headerNavbar"
+          class="d-none border-top flex-grow-1 d-lg-flex align-items-center"
+        >
+          <ul class="navbar-nav ml-auto text-center d-flex flex-md-row">
+            <li class="nav-item px-2 m-1">
+              <a href="https://www.pvgcoet.ac.in/">HOME</a>
+          </li>
+          <!-- <li class="nav-item px-2 m-1">
+              <a href="https://vlab.co.in/participating-institutes">PARTNERS</a>
+          </li> -->
+          <li class="nav-item px-2 m-1"> 
+              <a href="https://www.pvgcoet.ac.in/contact/">CONTACT</a>
+          </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+      <div class="row d-flex justify-content-between">
+        <div class="flex-column">
+          <div class="row py-4 px-4 breadcrumbs">
+            <a
+              href="../../main-page/Introduction.html"
+            >
+              Computer Engineering
+            </a>
+            <span class="mx-2">
+              <i aria-hidden="true" class="fa fa-angle-right"></i>
+            </span>
+            <a href="../../main-page/Introduction.html"> PHP </a>
+            <span class="mx-2">
+              <i aria-hidden="true" class="fa fa-angle-right"></i>
+            </span>
+            <a href="./index.html">
+              CSS
+            </a>
+          </div>
+        </div>
+        <div class="flex-column">
+          <div id="plugin-bug-report"></div>
+          <div id="plugin-rating"></div>
+        </div>
+      </div>
+      <div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+        <div
+          class="modal fade popupmenu"
+          id="popupMenu"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  <a href="https://www.pvgcoet.ac.in/"class="navbar-brand">
+                    <img
+                      src="./assets/images/Logo.jpeg"
+                      alt="vlabs logo"
+                      class="vlabs-logo"
+                    />
+                  </a>
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close align-self-center"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body nav-menu">
+                <div>
+                  <div class="d-flex nav-menu-body">
+                    <a href="index.html" class="p-2"> Aim </a>
+                  </div>
+                  <div id="t-" class="collapse">
+                    <div
+                      class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex nav-menu-body">
+                    <a href="theory.html" class="p-2 current-item"> Theory </a>
+                  </div>
+                  <div id="t-" class="collapse">
+                    <div
+                      class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex nav-menu-body">
+                    <a href="objective.html" class="p-2"> Objective </a>
+                  </div>
+                  <div id="t-" class="collapse">
+                    <div
+                      class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex nav-menu-body">
+                    <a href="references.html" class="p-2"> References </a>
+                  </div>
+                  <div id="t-" class="collapse">
+                    <div
+                      class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex nav-menu-body">
+                    <a href="feedback.html" class="p-2"> Feedback </a>
+                  </div>
+                  <div id="t-" class="collapse">
+                    <div
+                      class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex"
+          id="menu"
+        >
+          <div>
+            <div class="d-flex nav-menu-body">
+              <a href="index.html" class="p-2"> Aim </a>
+            </div>
+            <div id="t-" class="collapse">
+              <div
+                class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+              ></div>
+            </div>
+          </div>
+          <div>
+            <div class="d-flex nav-menu-body">
+              <a href="theory.html" class="p-2 current-item"> Theory </a>
+            </div>
+            <div id="t-" class="collapse">
+              <div
+                class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+              ></div>
+            </div>
+          </div>
+          <div>
+            <div class="d-flex nav-menu-body">
+              <a href="objective.html" class="p-2"> Objective </a>
+            </div>
+            <div id="t-" class="collapse">
+              <div
+                class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+              ></div>
+            </div>
+          </div>
+          <div>
+            <div class="d-flex nav-menu-body">
+              <a href="references.html" class="p-2"> References </a>
+            </div>
+            <div id="t-" class="collapse">
+              <div
+                class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+              ></div>
+            </div>
+          </div>
+          <div>
+            <div class="d-flex nav-menu-body">
+              <a href="feedback.html" class="p-2"> Feedback </a>
+            </div>
+            <div id="t-" class="collapse">
+              <div
+                class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+
+          <div class="text-center fix-spacing">
+          <h2><b>1.1 HTML Structure</b></h2>
+          </div>
+          <p>
+            <p>The structure of an HTML document is the foundation of any webpage. It defines how the content is organized and presented in a browser.</p>
+            <p>
+              <ol>
+              <li>
+                <b>&lt;!DOCTYPE> Declaration:</b> This declaration defines the document type and version of HTML. It ensures that the browser renders the page in standards-compliant mode.
+              </li>
+              <li>
+                <b>&lt;html> Element:</b> This is the root element of the HTML document. All other elements are nested within it.
+              </li>
+              <li>
+                <b>&lt;head> Element:</b> This element contains meta-information about the document, such as the title, character set, and links to stylesheets or scripts. It doesn't contain visible content.
+              </li>
+              <li>
+                <b>&lt;body> Element:</b> The &lt;body> element contains all the visible content of the webpage, such as text, images, links, and more.
+              </li>
+            </p>
+            <p>Structure :</p>
+            <pre><code> <br>
+              &lt;!DOCTYPE html>
+              &lt;html lang="en">
+                &lt;head>
+                  &lt;meta charset="UTF-8">
+                  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  &lt;title> My First Webpage &lt;/title>
+                &lt;/head>
+                &lt;body>
+                  &lt;h1> Welcome to My Webpage &lt;/h1>
+                  &lt;p> This is a paragraph of text on my first webpage. &lt;/p>
+                &lt;/body>
+              &lt;/html>      
+            </code></pre>
+          </p>
+
+          <div class="text-center fix-spacing">
+          <h3><b>1.2 HTML Common Tags</b></h3>
+          </div>
+          <p>
+          <ol>
+            <li>
+            <b>&lt;p> Tag (Paragraph):</b>
+              The &lt;p> tag is used to define a paragraph of text. It's a block-level element, meaning it starts on a new line and takes up the full width available.<br>
+              Example:
+              <pre><code>
+                &lt;p>This is a paragraph of text.&lt;/p>
+              </code></pre>
+            </li>
+            <br>
+            <li>
+              <b>&lt;h1> Tag (Heading):</b>
+              The &lt;h1> tag is used for the main heading of a webpage. It's the largest and most important heading, typically used once per page to define the main title or topic.<br>
+              Example:
+              <pre><code>
+                &lt;h1>Welcome to My Website&lt;/h1>
+              </code></pre>
+              Explanation: This tag represents the top-level heading, making the text bold and large. There are also <code>&lt;h2></code>, <code>&lt;h3></code>, etc., for subheadings with decreasing importance.
+            </li>
+            <br>
+            <li>
+              <b>&lt;a> Tag (Anchor/Link):</b>
+              The &lt;a> tag is used to create hyperlinks, which can link to other pages, files, or locations within the same page.
+              Example:
+              <pre><code></code>
+              &lt;a href="https://www.pvgcoet.ac.in/">PVG COET&lt;/a>
+              </code></pre>
+              Explanation: The <b><i>href</i></b> attribute specifies the URL of the link's destination. The text between the opening and closing &lt;a> tags becomes the clickable part of the link.
+            </li>
+          </ol>
+        </p>
+
+        <div class="text-center fix-spacing">
+        <h3><b>1.3 HTML Lists</b></h3>
+        </div>
+          <p>
+          <ol>
+            <li>
+            <b>&lt;ul> Tag (Unordered List):</b>
+            The &lt;ul> tag is used to create an unordered list, where items are typically marked with bullet points. The order of the items doesn&#39;t matter.<br>
+              Example:
+              <pre><code>
+                &lt;ul>
+                  &lt;li>Mango&lt;/li>
+                  &lt;li>Apple&lt;/li>
+                  &lt;li>Banana&lt;/li>
+                &lt;/ul>
+              </code></pre>
+              Explanation: The &lt;ul> tag wraps the entire list, and each item within the list is wrapped in an &lt;li> (list item) tag. By default, each item is displayed with a bullet point.
+            </li>
+            <br>
+            <li>
+              <b>&lt;ol> Tag (Ordered List):</b>
+              The &lt;ol> tag is used to create an ordered list, where items are marked with numbers or letters, indicating that the order is important.<br>
+              Example:
+              <pre><code>
+                &lt;ol>
+                  &lt;li>One&lt;/li>
+                  &lt;li>Two&lt;/li>
+                  &lt;li>Three&lt;/li>
+                &lt;/ol>
+              </code></pre>
+            </li>
+          </ol>
+        </p>
+
+        <div class="text-center fix-spacing">
+        <h3><b>1.4 HTML Forms</b></h3>
+        </div>
+          <p>
+          <ol>
+            <li>
+            <b>&lt;form> Tag:</b>
+              The &lt;form> tag is used to create an HTML form for user input. It acts as a container for various form elements like text fields, checkboxes, radio buttons, and submit buttons.<br>
+              <br>Attributes:<br>
+              <b>action:</b> Specifies where the form data should be sent when submitted (e.g., a server script).<br>
+              <b>method:</b> Defines the HTTP method (GET or POST) to be used when sending form data.<br>
+              <br>Example:
+              <pre><code>
+                &lt;form action="/submit_form.php" method="POST">
+                    &lt;!-- Form elements go here -->
+                &lt;/form>
+              </code></pre>
+              Explanation: This tag wraps all the input elements of a form. The action attribute determines the server endpoint where the data is sent, and the method attribute specifies how the data is sent.
+            </li>
+            <br>
+            <li>
+              <b>&lt;input> Tag:</b>
+              The &lt;input> tag is used to create various types of input fields. It's a self-closing tag that can take many forms, such as text boxes, radio buttons, checkboxes, etc., depending on the type attribute.<br>
+              <br>Attributes:<br>
+              <b>type:</b> Specifies the type of input (text, password, email, radio, checkbox, etc.).<br>
+              <b>name:</b> Assigns a name to the input field, which is used to identify the data when the form is submitted.<br>
+              <b>value:</b> Specifies the default value of the input field.<br>
+              <br>Example:
+              <pre><code>
+                &lt;input type="text" name="username" placeholder="Enter your username">
+              </code></pre>
+              Explanation: This creates a text input field for the user to enter their username. The placeholder attribute provides a hint to the user of what should be entered.
+            </li>
+            <br>
+            <li>
+              <b>&lt;button> Tag</b>
+              The &lt;button> tag is used to create a clickable button. It can be used to submit the form or trigger a JavaScript function.<br>
+              <br>Attributes:<br>
+              <b>type:</b> Defines the button's behavior. Common values are 'submit', 'reset', or 'button'.<br>
+              <br>Example:
+              <pre><code>
+                &lt;button type="submit">Submit&lt;/button>
+              </code></pre>
+              Explanation: This creates a button that, when clicked, submits the form data to the server as defined by the form&#39;s action attribute.
+            </li>
+          </ol>
+        </p>
+        <br>
+        
+        <div class="text-center fix-spacing">
+          <b>Combined Code Example:</b>
+        </div>
+        <p>
+          <pre><code>
+            &lt;!DOCTYPE html>
+              &lt;html lang="en">
+                &lt;head>
+                  &lt;meta charset="UTF-8">
+                  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  &lt;title>HTML Form Example&lt;/title>
+                &lt;/head>
+                &lt;body>
+                  &lt;h1>User Registration&lt;/h1>
+                    &lt;form action="/submit_registration.php" method="POST">
+                    &lt;label for="username">Username:&lt;/label>
+                    &lt;input type="text" id="username" name="username" placeholder="Enter your username">
+                    &lt;label for="password">Password:&lt;/label>
+                    &lt;input type="password" id="password" name="password" placeholder="Enter your password">
+                    &lt;button type="submit">Register&lt;/button>
+                    &lt;/form>
+                &lt;/body>
+              &lt;/html>
+          </code></pre>
+        </p>
+        </div>
+      </div>
+    </div>
+    <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+      <div class="row px-5 mx-0">
+        <div class="col d-flex flex-column m-0 py-2 text-center">
+          <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
+          <span> Phone: General Information: +91 020 24228258/65/79 </span>
+          <span> Email: vlabs@pvgcoet.ac.in </span>
+        </div>
+      </div>
+    </footer>
+
+<script src="./assets/js/toggleSidebar.js"></script>
+
+
+
+</body>
+
+</html>

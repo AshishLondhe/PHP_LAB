@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+    <script src="js/cookies1.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+        </style>
+    <script>
+        function showcook()
+        {
+            document.getElementById("show1").style.display = "table-row";
+            document.getElementById("show2").style.display = "none";
+        }
+        function showr() {
+            document.getElementById("show2").style.display = "table-row";
+            document.getElementById("show1").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td colspan="2">
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Set Cookies" onclick="showcook();" />
+                <input type="button"  style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"value="Retrive Cookies" onclick="showr();" />
+            </td>
+        </tr>
+        <tr id="show1">
+            <td>
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="l5">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l6">&lt;/head&gt;</p>
+                <p id="l7">&lt;body&gt;</p>
+                <p id="l8">&lt;h1&gt; This program helps in understanding the Cookies&lt;/h1&gt;</p>
+                <p id="l9">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="l10"> &lt;table&gt;</p>
+                <p id="l11">&lt;tr&gt;&lt;td&gt; Enter Cookie name&lt;/td&gt;&lt;td&gt; &lt;input type=text name=cname  value= "&lt;?php echo isset($_POST['cname']) ? $_POST['cname'] : ''; ?&gt;" &gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l12">&lt;tr&gt;&lt;td&gt; Enter Cookie value&lt;/td&gt;&lt;td&gt; &lt;input type=text name=cvalue  value= "&lt;?php echo isset($_POST['cvalue']) ? $_POST['cvalue'] : ''; ?&gt;" &gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l13">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = Set Cookie&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l14"> &lt;/table&gt;</p>
+                <p id="l15"> &lt;/form&gt;</p>
+                <p id="l16"> &lt;?php</p>
+                <p id="l17">if( count($_POST)=0&gt; && isset($_POST["cname"])  && isset($_POST["cvalue"]) )</p>
+                <p id="l18">{$cookie_name = $_POST["cname"];</p>
+                <p id="l19"> $cookie_value = $_POST["cvalue"];</p>
+                <p id="l20">  setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");</p>
+                <p id="l21"> if(!isset($_COOKIE[$cookie_name]))</p>
+                <p id="l22"> {  echo "Cookie named " . $cookie_name . " is not set!";	}</p>
+                <p id="l23"> else</p>
+                <p id="l24">{  echo "Cookie " . $cookie_name . " is set!&lt;br&gt;";</p>
+                <p id="l25">echo "Value is: " . $_COOKIE[$cookie_name];	}</p>
+                <p id="l26"> }</p>
+                <p id="l27"> ?&gt;</p>
+                <p id="l28"> &lt;/body&gt;</p>
+                <p id="l29">&lt;/html&gt;</p>
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="initcookies();" />
+            </td>
+            <td style="vertical-align:top">
+                <h3 id="h1" style="display:none ">This program helps in understanding the Cookies</h3>
+                <table>
+                    <tr id="t1" style="display:none ">
+                        <td>
+                            Enter Cookie name<input type="text" id="cname" />
+                        </td>
+                    </tr>
+                    <tr id="t2" style="display:none ">
+                        <td>
+                            Enter Cookie value<input type="text" id="cvalue" />
+                        </td>
+                    </tr>
+                    <tr id="t3" style="display:none ">
+                        <td>
+                            <input type="button"  value="Set Cookie" onclick="cookieset();"/>
+                        </td>
+                    </tr>
+                </table>
+                <p id="ph1"></p>
+                <p id="ph2"></p>
+            </td>
+        </tr>
+        <tr id="show2" style="display:none">
+            <td>
+                <p id="n1">&lt;!DOCTYPE html&gt;</p>
+                <p id="n2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="n3">&lt;head&gt;</p>
+                <p id="n4">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="n5">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="n6">&lt;/head&gt;</p>
+                <p id="n7">&lt;body&gt;</p>
+                <p id="n8">&lt;h1&gt; This is programs help in retrieving the Cookies&lt;/h1&gt;</p>
+                <p id="n9"> &lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="n10"> &lt;table&gt;</p>
+                <p id="n11">&lt;tr&gt;&lt;td&gt; Enter Cookie name&lt;/td&gt;&lt;td&gt; &lt;input type=text name=cname  value= "&lt;?php echo isset($_POST['cname']) ? $_POST['cname'] : ''; ?&gt;" &gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="n12">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = Retrieve Cookie &gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="n13"> &lt;/table&gt;</p>
+                <p id="n14"> &lt;/form&gt;</p>
+                <p id="n15">  &lt;?php</p>
+                <p id="n16">if(count($_POST)&gt0 && isset($_POST["cname"]) )</p>
+                <p id="n17"> {	$cookie_name = $_POST["cname"];</p>
+                <p id="n18">if(!isset($_COOKIE[$cookie_name])) {</p>
+                <p id="n19">echo "Cookie named " . $cookie_name . " is not set!"; }	</p>
+                <p id="n20">else {	echo "Cookie ".$cookie_name." is already set!&lt;br&gt;";</p>
+                <p id="n21">echo "Value is: " . $_COOKIE[$cookie_name]; }</p>
+                <p id="n22">  }</p>
+                <p id="n23"> ?&gt;</p>
+                <p id="n24"> &lt;/body&gt;</p>
+                <p id="n25">&lt;/html&gt;</p>
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="checksetcookies();" />
+
+            </td>
+            <td style="vertical-align:top">
+                <h3 id="s1" style="display:none ">This is programs help in retrieving the Cookies</h3>
+                <table>
+                    <tr id="s2" style="display:none ">
+                        <td>
+                            Enter Cookie name<input type="text" id="cookname" />
+                        </td>
+                    </tr>
+                    <tr id="s3" style="display:none ">
+                        <td>
+                            <input type="button" value="Retrive Cookie" onclick="retrivecookie();" />
+                        </td>
+                    </tr>
+                </table>
+                <p id="sh1"></p>
+                <p id="sh2"></p>
+            </td>
+        </tr>
+        <tr id="page1">
+            <td colspan="2">
+                <p id="ht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="ht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="ht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="ht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="ht8" style="display:none ">&lt;h1&gt;This program helps in understanding the Cookies&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="ht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/cookie1.php"&gt;</p><br />
+
+                <p id="ht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="ht11" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter Cookie name&lt;/td&gt;&lt;td&gt;&lt;input type=text name=cname value=</p><br />
+                <p id="ht12" style="display:none ">&lt;tr&gt;&lt;td&gt;  Enter Cookie value&lt;/td&gt;&lt;td&gt;&lt;input type=text name=cvalue value=</p><br />
+                <p id="ht13" style="display:none ">&lt;tr&gt; &lt;td&gt;&lt;input type=submit value="Set values" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht14" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="ht15" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="ht16" style="display:none ">Cookie named is set!&lt;br&gt;</p><br />
+                <p id="ht17" style="display:none ">Value is &lt;br&gt;</p><br />
+                <p id="ht18" style="display:none ">Cookie named is not set! </p><br />
+                <p id="ht19" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="ht20" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+        <tr id="page2" style="display:none">
+            <td colspan="2">
+                <p id="nht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="nht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="nht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="nht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="nht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="nht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="nht7" style="display:none ">&lt;body&gt;</p><br />
+                <p id="nht8" style="display:none ">&lt;h1&gt;This is programs help in retrieving the Cookies&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="nht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/Cookie1.php"&gt;</p><br />
+                <p id="nht10" style="display:none ">&lt;table&gt;</p><br />
+                <p id="nht11" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter Cookie name&lt;/td&gt;&lt;td&gt;&lt;input type=text name=cname value=</p><br />
+                <p id="nht12" style="display:none ">&lt;tr&gt; &lt;td&gt;&lt;input type=submit value="Retrieve Cookie" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+
+                <p id="nht13" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="nht14" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="nht15" style="display:none ">Cookie is already set!&lt;br&gt;</p><br />
+                <p id="nht16" style="display:none ">Value is &lt;br&gt;</p><br />
+                <p id="nht17" style="display:none ">Cookie is not set! </p><br />
+                <p id="nht18" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="nht19" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+    </table>
+
+</table><br/>
+<p>Task 1) Write a PHP script to set the cookie with name as <b>VLAB</b> and value as <b>2019</b>.Set this cookie for <b>180 seconds</b> and display the value of the cookie.<br/>
+<p> Task 2) Write a PHP script to delete the cookie created in the Task 1.<br/>
+</p> <br/></font>
+<p><i> [Write your code in the area provided below.] </i ></p><br/>
+<!-- <p> <b> &lt;?php <b/></p>
+<iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+</body>
+</html>

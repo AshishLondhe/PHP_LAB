@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/session.ob.js"></script>
+    <script src="js/session.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <table style="width:100%">
+        <tr id="t1">
+            <td>
+                <p style="text-align:center ;font-size:14px;color:blue  ">Page 1</p>
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;?php</p>
+                <p id="l3"> session_start();</p>
+                <p id="l4">?&gt;</p>
+                <p id="l5">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="l6">&lt;head&gt;</p>
+                <p id="l7">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="l8">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l9">&lt;/head&gt;</p>
+                <p id="l10">&lt;body&gt;</p>
+                <p id="l11">&lt;h1&gt; This new program helps in setting session varaibles&lt;/h1&gt;</p>
+                <p id="l12"> &lt;form name=formSubmit method="post" action="&lt?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="l13">&lt;table&gt;</p>
+                <p id="l14">&lt;tr&gt;&lt;td&gt; Let us create two session variables LoginID and Username&lt;/td&gt;&lt;td&gt;</p>
+                <p id="l15">&lt;tr&gt;&lt;td&gt; Enter LoginID&lt;/td&gt;&lt;td&gt; &lt;input type=text name=lid  value= "&lt;?php echo isset($_POST['lid']) ? $_POST['lid'] : ''; ?&gt;" &gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l16">&lt;tr&gt;&lt;td&gt; Enter User name&lt;/td&gt;&lt;td&gt; &lt;input type=text name=uname  value= "&lt;?php echo isset($_POST['uname']) ? $_POST['uname'] : ''; ?&gt;" &gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l17">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = Set Values&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l18">&lt;/table&gt;</p>
+                <p id="l19">&lt;/form&gt;</p>
+                <p id="l20">&lt;?php</p>
+                <p id="l21">if( count($_POST)&gt0 && isset($_POST["lid"])  && isset($_POST["uname"]) )</p>
+                <p id="l22">{$session_lid = $_POST["lid"];</p>
+                <p id="l23">$session_uname = $_POST["uname"];</p>
+                <p id="l24">$_SESSION["loginID"] = $session_lid;</p>
+                <p id="l25">$_SESSION["userName"] = $session_uname;</p>
+                <p id="l26">echo "Session variables have been set.";</p>
+                <p id="l27">echo "Your login ID is " . $_SESSION['loginID'] . ".&lt;br&gt;";</p>
+                <p id="l28">echo "Your Username is " . $_SESSION['userName'] . ".";}</p>
+                <p id="l29">?&gt;</p>
+                <p id="l30">&lt;/body&gt;</p>
+                <p id="l31">&lt;/html&gt;</p>
+
+                <input type="button" value="Execute PHP" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" onclick="initsession();" />
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Go To Page2" onclick="page2();" />
+            </td>
+            <td style="vertical-align:top ">
+                <h2 id="h1" style="display:none ">This program helps in setting session varaibles</h2>
+                <table>
+                    <tr id="h2" style="display:none ">
+                        <td colspan="2">
+                            Let us create two session variables LoginID and Username
+                        </td>
+                    </tr>
+                    <tr id="h3" style="display:none ">
+                        <td>
+                            Enter LoginID &nbsp;
+                        </td>
+                        <td>
+                            <input type="text" id="lid" />
+                        </td>
+                    </tr>
+                    <tr id="h4" style="display:none ">
+                        <td>
+                            Enter User name &nbsp;
+                        </td>
+                        <td>
+                            <input type="text" id="uname" />
+                        </td>
+                    </tr>
+                    <tr id="h5" style="display:none ">
+                        <td colspan="2">
+                            <input type="button"  value="Set values" onclick="createsession();" />
+                        </td>
+                    </tr>
+                </table>
+                <p id="lh1"></p><br />
+                <p id="lh2"></p><br />
+                <p id="lh3"></p><br />
+            </td>
+
+        </tr>
+        <tr id="t2" style="display:none">
+            <td>
+                <p style="text-align:center ;font-size:14px;color:blue  ">Page 2</p>
+                <p id="m1">&lt;!DOCTYPE html&gt;</p>
+                <p id="m2">&lt;?php</p>
+                <p id="m3">session_start();</p>
+                <p id="m4">?&gt;</p>
+                <p id="m5">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml" &gt;</p>
+                <p id="m6">&lt;head&gt;</p>
+                <p id="m7">&lt;meta charset="utf-8" /&gt;</p>
+                <p id="m8">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="m9">&lt;/head&gt;</p>
+                <p id="m10"> &lt;body&gt;</p>
+                <p id="m11">&lt;h1&gt; This program helps in retrieving, modifying and deleting session varaibles&lt;/h1&gt;</p>
+                <p id="m12">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="m13">&lt;table&gt;&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = RetreiveUsername name=retreive&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="m14">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = RetreiveAll name=retreiveAll&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="m15">&lt;tr&gt;&lt;td&gt; Enter User name&lt;/td&gt;&lt;td&gt; &lt;input type=text name=uname  value= "&lt;?php echo isset($_POST['uname']) ? $_POST['uname'] : ''; ?&gt;" &gt;</p>
+                <p id="m16">&lt;/td&gt;&lt;td&gt;&lt;input type = submit  value = Modify name=modify&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="m17">&lt;tr&gt; &lt;td&gt;&lt;input type = submit  value = Remove name=remove&gt;&lt;/input&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+                <p id="m18">&lt;/form&gt;</p>
+                <p id="m19">&lt;?php</p>
+                <p id="m20">if ( isset( $_POST['retreive'] ) )</p>
+                <p id="m21">{	echo "Your login ID is " . $_SESSION['loginID'] . ".&lt;br&gt;";</p>
+                <p id="m22">echo "Your Username is " . $_SESSION['userName'] . ".";}</p>
+                <p id="m23">if( isset($_POST['retreiveAll'] ) )</p>
+                <p id="m24">{	echo "You have set following session variables". "&lt;br&gt;";</p>
+                <p id="m25">print_r($_SESSION);}</p>
+                <p id="m26">if( isset($_POST['modify'] && isset($_POST["uname"]) )</p>
+                <p id="m27"> {	 	$session_uname = $_POST["uname"];</p>
+                <p id="m28"> $_SESSION["userName"] = $session_uname;</p>
+                <p id="m29"> echo "New session varaibles are: ";</p>
+                <p id="m30"> print_r($_SESSION); }</p>
+                <p id="m31">if ( isset( $_POST['remove'] ) )</p>
+                <p id="m32">{	session_unset();</p>
+                <p id="m33">session_destroy();</p>
+                <p id="m34"> echo "Session destroyed";}</p>
+                <p id="m35">?&gt;</p>
+                <p id="m36">&lt;/body&gt;</p>
+                <p id="m37">&lt;/html&gt;</p>
+
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="rsessioninit();" />
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Go To Page1" onclick="page1();" />
+
+            </td>
+            <td style="vertical-align:top ">
+                <h3 id="rh1" style="display:none ">This program helps in retrieving, modifying and deleting session varaibles</h3>
+                <table>
+                    <tr id="rh2" style="display:none ">
+                        <td colspan="2"><input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px; "value="RetreiveUsername" onclick="retrive();"></td>
+                    </tr>
+                    <tr id="rh3" style="display:none ">
+                        <td colspan="2"><input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="RetriveALL" onclick="retriveall();" /> </td>
+                    </tr>
+                    <tr id="rh4" style="display:none ">
+                        <td>
+                            Enter user name<input type="text" id="tid" />
+                        </td>
+                        <td>
+                            <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Modify" onclick="modify();" />
+                        </td>
+                    </tr>
+                    <tr id="rh5" style="display:none ">
+                        <td colspan="2">
+                            <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Remove" onclick="remove();" />
+                        </td>
+                    </tr>
+                </table>
+                <p id="ph1"></p>
+                <p id="ph2"></p>
+                <p id="ph3"></p>
+            </td>
+        </tr>
+        <tr id="page1" style="display:none">
+            <td colspan="2">
+                <p id="ht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="ht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="ht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="ht7" style="display:none ">&lt;body&gt;</p><br/>
+                <p id="ht8" style="display:none ">&lt;h1&gt;This program helps in setting session varaibles&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="ht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/sessionCreate.php"&gt;</p><br />
+                <p id="ht10" style="display:none ">Let us create two session variables LoginID and Username</p><br />
+                <p id="ht11" style="display:none ">&lt;table&gt;</p><br />
+                <p id="ht12" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter LoginID&lt;/td&gt;</p><br />
+                <p id="ht13" style="display:none ">&lt;&lt;td&gt;td&gt;&lt;input type=text name=lid value="" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht14" style="display:none ">&lt;tr&gt;&lt;td&gt; Enter User name&lt;/td&gt;</p><br />
+                <p id="ht15" style="display:none ">&lt;td&gt;&lt;input type=text name=uname value="" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht16" style="display:none ">&lt;tr&gt; &lt;td&gt;&lt;input type=submit value="Set values" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht17" style="display:none ">&lt;/table&gt;</p><br />
+                <p id="ht18" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="ht19" style="display:none ">Session variables have been set.&lt;br&gt;</p><br />
+                <p id="ht20" style="display:none ">Your login ID is &lt;br&gt;</p><br />
+                <p id="ht21" style="display:none ">Your Username is </p><br />
+                <p id="ht22" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="ht23" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+        <tr id="page2" style="display:none" >
+            <td colspan="2">
+                <p id="mht1" style="display:none ">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="mht2" style="display:none ">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="mht3" style="display:none ">&lt;head&gt;</p><br />
+                <p id="mht4" style="display:none ">&lt;meta charset="utf-8" /&gt;</p><br />
+                <p id="mht5" style="display:none ">&lt;title&gt;Introdution to PHP &lt;/title&gt;</p><br />
+                <p id="mht6" style="display:none ">&lt;/head&gt;</p><br />
+                <p id="mht7" style="display:none ">&lt;body&gt;</p><br/>
+                <p id="mht8" style="display:none ">&lt;h1&gt; This program helps in retrieving, modifying and deleting session varaibles&lt;/h1&gt;&lt;br/&gt;</p><br />
+                <p id="mht9" style="display:none ">&lt;form name=formSubmit method="post" action="/vlab/sessionRetrieveModifyDelete.php"&gt;</p><br />
+                <p id="mht10" style="display:none ">&lt;table&gt;&lt;tr&gt; &lt;td&gt;&lt;input type=submit value=RetreiveUsername name=retreive /&gt;&lt;/td&gt;/tr&gt;</p><br />
+                <p id="mht11" style="display:none ">&lt;tr&gt;&lt;td&gt; &lt;input type=submit value=RetreiveAll name=retreiveAll /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="mht12" style="display:none ">&lt;tr&gt;td&gt;&lt; Enter User name&lt;/td&gt;&lt;td&gt;&lt;input type=text name=uname value=""&gt;&lt;/td&gt;</p><br />
+                <p id="mht13" style="display:none ">&lt;td&gt;&lt;input type=submit value=Modify name=modify /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="mht14" style="display:none ">&lt;tr&gt;&lt;td&gt;&lt;input type=submit value=Remove name=remove /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p><br />
+                <p id="mht15" style="display:none ">&lt;/form&gt;</p><br />
+                <p id="mht16" style="display:none ">Your login ID is &lt;br&gt;</p><br />
+                <p id="mht17" style="display:none ">Your Username is </p><br />
+                <p id="mht18" style="display:none ">You have set following session variables&lt;br&gt;</p><br />
+                <p id="mht19" style="display:none ">Array &lt;br&gt;</p><br />
+                <p id="mht20" style="display:none ">(  [loginID] => 123 &lt;br&gt; </p><br />
+                <p id="mht21" style="display:none ">[userName] => asdf  )&lt;br&gt; </p><br />
+                <p id="mht22" style="display:none ">New session varaibles are: Array&lt;br&gt;</p><br />
+                <p id="mht23" style="display:none ">(  [loginID] => 123 &lt;br&gt; </p><br />
+                <p id="mht24" style="display:none ">[userName] => asdf  )&lt;br&gt; </p><br />
+                <p id="mht25" style="display:none ">Session destroyed&lt;br&gt;</p><br />
+                <p id="mht26" style="display:none ">&lt;/body&gt;</p><br />
+                <p id="mht27" style="display:none ">&lt;/html&gt;</p><br />
+            </td>
+        </tr>
+</table><br/>
+<p >Task 1) Write a PHP script to count and display the number of visitors to the current web page, using session variable. <br/>
+<p> Task 2) Write a PHP script to destroy the session variable created in Task 1.<br/>
+</p> <br/></font>
+<p><i> [Write your code in the area provided below.] </i></p><br/>
+<!-- <p> <b> &lt;?php <b/></p>
+<iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+</body>
+</html>

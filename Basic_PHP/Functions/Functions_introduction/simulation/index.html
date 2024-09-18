@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/function1.ob.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+
+    </style>
+    <script>
+
+    </script>
+
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <p id="l1">&lt;!DOCTYPE html&gt;</p>
+                <p id="l2">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+                <p id="l3">&lt;head&gt;</p>
+                <p id="l4">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p>
+                <p id="l5">&lt;/head&gt;</p>
+                <p id="l6">&lt;body&gt;</p>
+                <p id="l7">&lt;h1&gt;This is program helps in understanding the functions&lt;/h1&gt;</p>
+                <p id="l8">&lt;h2&gt; Calculate Sum of first n numbers&lt;/h2&gt;
+                <p id="l9">&lt;form name=formSubmit method="post" action="&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;"&gt;</p>
+                <p id="l10">&lt;table&gt;
+                <p id="l11">&lt;tr&gt;&lt;td&gt;Enter The nunmber  &lt;/td&gt;</p>
+                <p id="l12"> &lt;td&gt;&lt;input type=text name=value1  value= "&lt;?php echo isset($_POST['value1']) ? $_POST['value1'] : ''; ?&gt;" /&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l13">&lt;tr&gt;&lt;td&gt;&lt;input type="submit" value="Calculate" /&gt;&lt;/td&gt;&lt;/tr&gt;</p>
+                <p id="l14">&lt;/table&gt;</p>
+                <p id="l15">&lt;/form&gt;</p>
+                <p id="l16">&lt;?php</p>
+                <p id="l17">if( count($_POST) &gt; 0 && isset($_POST["value1"]) )
+                <p id="l18">{
+                <p id="l19">$varOperand= $_POST["value1"];
+                <p id="l20">$varAns=0;</p>
+                <p id="l21">function Summation( $num)</p>
+                <p id="l22">{</p>
+                <p id="l23">$sum =0;</p>
+                <p id="l24">for($cnt=1;$cnt&lt;=$num;$cnt++)</p>
+                <p id="l25">{</p>
+                <p id="l26">$sum= $sum +$cnt;</p>
+                <p id="l27">}</p>
+                <p id="l28">return $sum;</p>
+                <p id="l29">}</p>
+                <p id="l30">$varAns=Summation($varOperand);</p>
+                <p id="l31">echo "&lt;h4&gt;Summation of 0 to  $varOperand  is $varAns &lt;/h4&gt;";</p>
+                <p id="l32">}</p>
+                <p id="l33">?&gt;</p>
+                <p id="l34">&lt;/body&gt;</p>
+                <p id="l35">&lt;/html&gt;</p>
+                <input type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;" value="Execute PHP" onclick="initphp();" />
+
+</td>
+            <td style="vertical-align:top">
+                <h1 id="h1" style="display:none ">This is program helps in understanding the functions</h1><br />
+                <h2 id="h2" style="display:none ">Calculate Sum of first n numbers</h2><br/>
+                <h4 id="h3" style="display:none ">Enter The Number</h4><input type="text" id="h4" style="display:none " /><br />
+                <input type="button"   id="h5" value="Calculate" onclick="cal();" style="display:none " /><br />
+                <h4 id="h6" style="display:none ">The Suumation of 0 to </h4>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <p id="ht1" style="display:none">&lt;!DOCTYPE html&gt;</p><br />
+                <p id="ht2" style="display:none">&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;</p><br />
+                <p id="ht3" style="display:none">&lt;head&gt;</p><br />
+                <p id="ht4" style="display:none">&lt;title&gt;Introduction to PHP&lt;/title&gt;</p><br />
+                <p id="ht5" style="display:none">&lt;/head&gt;</p><br />
+                <p id="ht6" style="display:none">&lt;body&gt;</p><br />
+                <p id="ht7" style="display:none">&lt;h1&gt;This is program helps in understanding the functions&lt;/h1&gt;<br />
+                <p id="ht8" style="display:none">&lt;h2&gt; Calculate Sum of first n numbers&lt;/h2&gt;</p><br />
+                <p id="ht9" style="display:none">&lt;form name=formSubmit method="post" action="/vlab/function_non.php"&gt;</p><br />
+                <p id="ht10" style="display:none">&lt;table&gt;</p><br />
+                <p id="ht11" style="display:none">&lt;tr&gt;&lt;td&gt;Enter The nunmber  &lt;/td&gt;</p><br />
+                <p id="ht12" style="display:none">&lt;td&gt;&lt;input type=text name=value1  value= "<span id="n"></span>" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht13" style="display:none">&lt;tr&gt;&lt;td&gt;&lt;input type="submit" value="Claculate" /&gt;&lt;/td&gt;&lt;/tr&gt;</p><br />
+                <p id="ht14" style="display:none">&lt;/table&gt;</p><br />
+                <p id="ht15" style="display:none">&lt;/form&gt;</p><br />
+                <p id="ht16" style="display:none">&lt;b&gt; Summation of 0 to  <span id="num"></span>  is <span id="sum"></span> &lt;/b&gt;</p><br />
+                <p id="ht17" style="display:none">&lt;/body&gt;</p><br />
+                <p id="ht18" style="display:none">&lt;/html&gt;</p><br />
+</td>
+        </tr>
+    </table><br>
+<p>Task 1) Write a PHP script  using functions, to accept the radius of a circle and calculate area of the circle. <br/>
+<p>Task 2) Write a PHP script to accept temperature in degree Celsius, convert and display in Fahrenheit.<br/>
+</p> <br/></p>
+<p><i> [Write your code in the area provided below.] </i></p><br>
+<!-- <p> <b> &lt;?php <b/></p>
+<iframe src="js/Script1.php" width="100%" height="500">
+</iframe> -->
+<br>
+<button type="button" style="background-color:Cyan;color:black;width:150px;height:40px;font-size:16px;"><a href="http://localhost:3000/PHP_Lab_Simulation/php/phptryit.asp" target="_self">Open IDE</a></button>
+
+</body>
+</html>
